@@ -13,3 +13,19 @@ body {
     font-weight: 400;
     font-style: normal;
   }
+
+  @media only screen and (max-width: 570px) {
+    body {
+        font-family: 'Waiting for the Sunrise', cursive; 
+        font-size:15px; 
+        margin: 0 auto; 
+        letter-spacing: 6px; 
+        font-weight: bold;
+        text-align: center;
+        justify-content: center;
+        padding-top: 300px;
+        font-family: "Press Start 2P", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+}
