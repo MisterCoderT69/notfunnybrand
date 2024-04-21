@@ -4,112 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
-    <link rel="stylesheet" href="style/style2.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <title>NFS</title>
+    <link rel="icon" href="images/logo_tab.png" type="image/png">
+    <link rel="stylesheet" href="style/style4.css">
+    
 </head>
 <body>
-	<div class="title_content">
-		<h1>NOTFUNNYBRAND</h1>
-	</div>
 
+  <div class="grid-container-tshirt">
+    <div class="grid-item-tshirt">
+        Content 1
+    </div>
+    <div class="grid-item-tshirt">
+        <img src="shirts/oxxo_sinfondo.png" alt="">
+    </div>
+    <div class="grid-item-tshirt">
+        <div class="product">
+            <h3>OXXO TSHIRT</h3>
+            <p>$690 MXN</p>
+          </div>
+          <select id="options" name="options">
+              <option value="" disabled selected>Select Size</option>
+              <option value="option1">CH</option>
+              <option value="option2">M</option>
+              <option value="option3">L</option>
+              <option value="option3">XL</option>
+          </select>
+        <button>Agregar al carrito</button>
+        <div class="guia-tallas">
+            <p>GUIA DE TALLAS</p>
+            <table class="guia-tallas-table">
+                <tr>
+                    <th>Talla</th>
+                    <th>Medidas</th>
+                </tr>
+                <tr>
+                    <td>CH</td>
+                    <td>45x71</td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>50x73</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td>55x76</td>
+                </tr>
+                <tr>
+                    <td>XG</td>
+                    <td>60x78</td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</div>
 
-<section class="slider">
-    <div>
-      <img src="shirts/oxxo_sinfondo.png">
-      <div class="desc">
-        <h2 style="color: #EB0604;">SEXO</h2>
-        <p>$690</p>
-        <a href="#" class="btn">COMPRAR</a>
-      </div>
-    </div>
   
-    <div>
-      <img src="shirts/evianboy.png">
-      <div class="desc">
-        <h2 style="color: #01D0F5;">EVIAN BOY</h2>
-        <p>$690</p>
-        <a href="#" class="btn">COMPRAR</a>
-      </div>
-    </div>
-  
-    <div>
-      <img src="shirts/wellcum.png">
-      <div class="desc">
-        <h2 style="color: #F06EC3;">WELL CUM</h2>
-        <p>$690</p>
-        <a href="#" class="btn">COMPRAR</a>
-      </div>
-    </div>
-  
-    <div>
-      <img src="">
-      <div class="desc">
-        <h2 style="color: #F58202;">CUMMING SOON...</h2>
-        <p>$</p>
-        <!--<a href="#" class="btn">CARRITO</a>-->
-      </div>
-    </div>
-  
-    <div>
-      <img src="">
-      <div class="desc">
-        <h2>CUMMING SOON...</h2>
-        <p>$</p>
-        <!--<a href="#" class="btn">CARRITO</a>-->
-      </div>
-    </div>
-  
-    <div>
-      <img src="">
-      <div class="desc">
-        <h2>CUMMING SOON...</h2>
-        <p>$</p>
-        <!--<a href="#" class="btn">CARRITO</a>-->
-      </div>
-    </div>
-  
-  </section>
-
 <footer>
 	<div class="footer_content">
-		<p>&copy; hecha a mano por <a style="color: white;" href="https://www.instagram.com/chiconochistoso69/">@chiconochistoso69</a></p>
+    <img src="" alt="">
+		<p><img src="images/tejido-de-punto.png" alt="" height="50px" width="50px"> by <a href="https://www.instagram.com/chiconochistoso69/">@chiconochistoso69</a></p>
 	</div>
 </footer>
+<script src="script2.js"></script>
+<script>
+    const guiaTallasDiv = document.querySelector('.guia-tallas');
+    const guiaTallasTable = document.querySelector('.guia-tallas-table');
 
-    <script>
-        function createSlick(){  
+    guiaTallasDiv.addEventListener('click', () => {
+        if (guiaTallasTable.style.display === 'none') {
+            guiaTallasTable.style.display = 'table';
+        } else {
+            guiaTallasTable.style.display = 'none';
+        }
+    });
+</script>
 
-$(".slider").not('.slick-initialized').slick({
-    centerMode: true,
-    autoplay: true,
-    dots: true,
-
-      slidesToShow: 3,
-    responsive: [{ 
-        breakpoint: 768,
-        settings: {
-            dots: false,
-            arrows: false,
-            infinite: false,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        } 
-    }]
-});	
-
-}
-
-createSlick();
-
-//Will not throw error, even if called multiple times.
-$(window).on( 'resize', createSlick );
-
-//replace images with base64 image
-
-    </script>
 </body>
 
 </html>

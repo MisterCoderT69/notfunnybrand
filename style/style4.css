@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Silkscreen:wght@400;700&family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Silkscreen:wght@400;700&family=Zen+Tokyo+Zoo&family=Zeyada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Gloria+Hallelujah&family=Silkscreen:wght@400;700&family=Zen+Tokyo+Zoo&family=Zeyada&display=swap');
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+  }
+
+  .cart-icon {
+    position: fixed;
+    top: 20px; /* Distancia desde arriba */
+    right: 20px; /* Distancia desde la derecha */
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+    display: flex;
+    align-items: center;
+  }
+
+  .cart-count {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Posición absoluta para superponerlo sobre la imagen */
+    top: 50px; /* Ajusta la posición vertical */
+    right: 50px; /* Ajusta la posición horizontal */
+  }
+  
+  @media (max-width: 768px) {
+    .cart-icon {
+      position: fixed;
+      top: 30px; /* Distancia desde arriba */
+      right: 20px; /* Distancia desde la derecha */
+      z-index: 9999; /* Asegura que esté por encima de otros elementos */
+      display: flex;
+      align-items: center;
+    }
+  
+    .cart-count {
+      background-color: black;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute; /* Posición absoluta para superponerlo sobre la imagen */
+      top: 50px; /* Ajusta la posición vertical */
+      right: 50px; /* Ajusta la posición horizontal */
+    }
+  }
+  
+  .top-bar {
+    z-index: 2;
+    color: white;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  .text {
+    display: inline-block; /* Display phrases in a line */
+    padding: 0 200px; /* Add more space between phrases */
+    animation: slideRightToLeft 30s linear infinite !important;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+  }
+
+  
+  
+  
+  @keyframes slideRightToLeft {
+    from {
+      transform: translateX(100vw); /* Start from the right side of the page */
+    }
+    to {
+      transform: translateX(-200vw); /* Move to the left side of the page */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .top-bar {
+      font-size: 12px;
+    }
+    
+  }
+
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for big screens */
+    grid-gap: 50px;
+    margin-right: -600px;
+  }
+  
+  .grid-item {
+    padding: 20px;
+    text-align: center;
+    text-align: left;
+    justify-content: center;
+    
+  }
+
+  .grid-container a{
+    color: inherit; /* Use the color inherited from the parent */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .grid-container h3 {
+    font-family: "Zeyada", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+  }
+
+  .grid-container p {
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+  }
+
+  .text_container{
+    margin-top: -50px;
+  }
+
+  .grid-item h3, .grid-item p {
+    opacity: 0;
+    transition: opacity 0.9s ease;
+  }
+  
+  .grid-item:hover h3, .grid-item:hover p {
+    opacity: 1;
+  }
+
+
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 1400px; /* Set the height of your image container */
+  margin-top: 5px;
+  margin-bottom: 50px;
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+.image-container2 {
+    position: relative;
+    width: 100%;
+    height: 1400px; /* Set the height of your image container */
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-right: -50px;
+    overflow: hidden;
+  }
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+
+}
+
+.image-container2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    
+  }
+
+.scrolling-text {
+    position: absolute;
+    top: 15%; /* Position the text in the middle vertically */
+    left: 50%; /* Position the text in the middle horizontally */
+    transform: translate(-70%, -70%) rotate(-95deg); /* Center and rotate the text */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow: hidden; /* Hide the overflow text */
+    animation: scroll 30s linear infinite; /* Change the animation speed and timing as needed */
+    font-size: 200px;
+    color: white;
+    font-family: "Zen Tokyo Zoo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .scrolling-text2 {
+    position: absolute;
+    top: 50%; /* Position the text in the middle vertically */
+    left: 50%; /* Position the text in the middle horizontally */
+    transform: translate(-70%, -70%) rotate(-95deg); /* Center and rotate the text */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow: hidden; /* Hide the overflow text */
+    animation: scroll2 30s linear infinite; /* Change the animation speed and timing as needed */
+    font-size: 300px;
+    color: white;
+    font-family: "Bungee Hairline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .scrolling-text3 {
+    position: absolute;
+    top: 90%; /* Position the text in the middle vertically */
+    left: 50%; /* Position the text in the middle horizontally */
+    transform: translate(-70%, -70%) rotate(-95deg); /* Center and rotate the text */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow: hidden; /* Hide the overflow text */
+    animation: scroll 30s linear infinite; /* Change the animation speed and timing as needed */
+    font-size: 200px;
+    color: white;
+    font-family: "Zen Tokyo Zoo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translate(-50%, -50%) rotate(-10deg) translateX(40%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-10deg) translateX(-40%);
+    }
+  }
+
+  @keyframes scroll2 {
+    0% {
+      transform: translate(-50%, -50%) rotate(-10deg) translateX(-40%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-10deg) translateX(40%);
+    }
+  }
+
+  .scrolling-text4 {
+    position: absolute;
+    top: 15%; /* Position the text in the middle vertically */
+    left: 50%; /* Position the text in the middle horizontally */
+    transform: translate(-70%, -70%) rotate(-95deg); /* Center and rotate the text */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow: hidden; /* Hide the overflow text */
+    animation: scroll4 30s linear infinite; /* Change the animation speed and timing as needed */
+    font-size: 200px;
+    color: white;
+    font-family: "Zen Tokyo Zoo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .scrolling-text5 {
+    position: absolute;
+    top: 50%; /* Position the text in the middle vertically */
+    left: 50%; /* Position the text in the middle horizontally */
+    transform: translate(-70%, -70%) rotate(-95deg); /* Center and rotate the text */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow: hidden; /* Hide the overflow text */
+    animation: scroll3 30s linear infinite; /* Change the animation speed and timing as needed */
+    font-size: 300px;
+    color: white;
+    font-family: "Bungee Hairline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .scrolling-text6 {
+    position: absolute;
+    top: 90%; /* Position the text in the middle vertically */
+    left: 50%; /* Position the text in the middle horizontally */
+    transform: translate(-70%, -70%) rotate(-95deg); /* Center and rotate the text */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow: hidden; /* Hide the overflow text */
+    animation: scroll4 30s linear infinite; /* Change the animation speed and timing as needed */
+    font-size: 200px;
+    color: white;
+    font-family: "Zen Tokyo Zoo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @keyframes scroll3 {
+    0% {
+      transform: translate(-50%, -50%) rotate(10deg) translateX(40%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(10deg) translateX(-40%);
+    }
+  }
+
+  @keyframes scroll4 {
+    0% {
+      transform: translate(-50%, -50%) rotate(10deg) translateX(-40%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(10deg) translateX(40%);
+    }
+  }
+
+footer{
+    text-align: center;
+    height: 130px;
+    overflow-x: hidden;
+}
+
+footer a{
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the default text color */
+    font-family: "Bungee Hairline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+
+footer p{
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+footer img{
+    margin-bottom: -15px;
+}
+
+
+@media (min-width: 1600px) and (max-width: 2000px) {
+  .grid-container {
+    margin-right: -500px;
+  }
+}
+
+@media (min-width: 1301px) and (max-width: 1599px) {
+  .grid-container {
+    margin-right: -10px;
+  }
+}
+
+
+
+@media (max-width: 1300px) {
+
+  .text {
+    animation: slideRightToLeft 8s linear infinite;
+    padding: 0 100px; /* Add more space between phrases */
+  }
+
+  .grid-item h3,
+  .grid-item p {
+    opacity: 0;
+    animation: fadeIn 0.9s ease forwards; /* Use a CSS animation to fade in */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+  @keyframes slideRightToLeft {
+    from {
+      transform: translateX(400px); /* Start from the right side of the page */
+    }
+    to {
+      transform: translateX(-700px); /* Move to the left side of the page */
+    }
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column for screens <= 600px */
+    margin-right: 0px;
+  }
+
+  .grid-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .grid-item img{
+    width: 90%;
+  }
+
+  .grid-item h3{
+    text-align: left;
+  }
+
+  .grid-item p{
+    text-align: left;
+  }
+
+
+  .scrolling-text {
+      font-size: 100px !important;
+    }
+  
+    .scrolling-text2 {
+      font-size: 100px !important;
+    }
+  
+    .scrolling-text3 {
+      font-size: 100px !important;
+    }
+
+    .scrolling-text4 {
+      font-size: 100px !important;
+      color: black !important;
+    }
+  
+    .scrolling-text5 {
+      font-size: 100px !important;
+      color: black !important;
+    }
+  
+    .scrolling-text6 {
+      font-size: 100px !important;
+      color: black !important;
+    }
+
+    footer{
+      text-align: center !important;
+      justify-content: center;
+    }
+  
+  footer a{
+      text-decoration: none; /* Remove underline */
+      color: inherit; /* Use the default text color */
+      font-size: 20px;
+  }
+  
+  footer p{
+      font-family: "Silkscreen", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+  }
+  
+  footer img{
+      margin-bottom: -15px;
+  }
+}
+
+
+/*--------------------------tshirt css style---------------------------*/
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px;
+}
+
+.product p{
+  margin-top: 20px;
+}
+
+.product h3 {
+  margin-right: 60px; /* Adjust as needed */
+}
+
+/* Style for the select element */
+select#options {
+  padding: 10px;
+  font-size: 16px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  border-radius: 5px;
+  width: 206px;
+}
+
+/* Style for the options */
+select#options option {
+  padding: 5px;
+}
+
+/* Style when an option is selected */
+select#options option:checked {
+  background-color: #000000;
+}
+
+label {
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+select {
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 1em;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  background-color: #fbca1f;
+}
+
+button {
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
+
+.guia-tallas{
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+
+/* tabla magica aparece */
+table {
+  display: none; /* Hide the table by default */
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+
+th, td {
+  border: 1px solid #000000;
+  padding: 15px 20px -5px 10px;
+  border: none; /* Remove border from table cells */
+}
+
+th {
+  background-color: #FBCA1F;
+}
+
+
+.grid-container-tshirt {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr; /* Three equal columns */
+  gap: 10px; /* Gap between items */
+}
+
+.grid-item-tshirt {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  /* For screens 600px or less */
+  .grid-container-tshirt {
+      grid-template-columns: 1fr; /* Single column */
+  }
+  .grid-item-tshirt:nth-child(2) {
+      /* Target the middle item */
+      grid-column: 1 / span 1; /* Span one column */
+      margin: 0 auto; /* Center the item */
+  }
+}
+
+.grid-item-tshirt:nth-child(1) {
+  background-color: blueviolet;
+}
+.grid-item-tshirt:nth-child(2) {
+  background-color: blue;
+  width: 1000px;
+}
+.grid-item-tshirt:nth-child(3) {
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
