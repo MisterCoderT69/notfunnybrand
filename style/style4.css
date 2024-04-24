@@ -14,10 +14,19 @@ body {
     position: fixed;
     top: 20px; /* Distancia desde arriba */
     right: 20px; /* Distancia desde la derecha */
-    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+    z-index: 2; /* Asegura que esté por encima de otros elementos */
     display: flex;
     align-items: center;
   }
+
+  .top-left {
+    position: fixed; /* Position the element fixed */
+    top: 10px; /* Position at the top */
+    left: 20px; /* Position at the left */
+    width: 200px;
+    z-index: 4; /* Asegura que esté por encima de otros elementos */
+
+}
 
   .cart-count {
     background-color: black;
@@ -67,11 +76,21 @@ body {
     overflow: hidden;
     white-space: nowrap; /* Prevent text wrapping */
   }
+
+    
+  .top-bar2 {
+    z-index: 2;
+    margin-top: -50px;
+    color: white;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
   
   .text {
     display: inline-block; /* Display phrases in a line */
-    padding: 0 200px; /* Add more space between phrases */
-    animation: slideRightToLeft 30s linear infinite !important;
+    padding: 0 300px; /* Add more space between phrases */
+    animation: slideRightToLeft 25s linear infinite !important;
     font-family: "DotGothic16", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -86,7 +105,7 @@ body {
       transform: translateX(100vw); /* Start from the right side of the page */
     }
     to {
-      transform: translateX(-200vw); /* Move to the left side of the page */
+      transform: translateX(-100vw); /* Move to the left side of the page */
     }
   }
   
@@ -104,6 +123,8 @@ body {
     grid-gap: 50px;
     margin-right: -600px;
   }
+
+  
   
   .grid-item {
     padding: 20px;
@@ -130,6 +151,10 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
+  }
+
+  .envio-gratis-texto{
+    font-size: 10px;
   }
 
   .text_container{
@@ -461,11 +486,18 @@ footer img{
 }
 
 .product p{
-  margin-top: 20px;
+  margin-top: 32px;
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .product h3 {
   margin-right: 60px; /* Adjust as needed */
+  font-family: "Zeyada", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
 }
 
 /* Style for the select element */
@@ -477,6 +509,7 @@ select#options {
   box-shadow: 0.1em 0.1em;
   border-radius: 5px;
   width: 206px;
+  margin-top: -20px;
 }
 
 /* Style for the options */
@@ -582,18 +615,19 @@ img {
 }
 
 .grid-item-tshirt:nth-child(1) {
-  background-color: blueviolet;
+  background-color: rgb(164, 150, 178);
 }
 .grid-item-tshirt:nth-child(2) {
   background-color: blue;
   width: 1000px;
 }
 .grid-item-tshirt:nth-child(3) {
-  background-color: bisque;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  border: 1px solid #ccc;
+
   border-radius: 5px;
+  margin-top: -50px;
 }
