@@ -161,6 +161,23 @@ body {
     margin-top: -50px;
   }
 
+  @keyframes colorChange {
+    0% { color: red; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: orange; }
+    100% { color: red; }
+}
+
+span {
+    animation: colorChange 5s infinite;
+}
+
+.text p{
+  margin-right: 10px; /* Add some space between the text */
+  animation: colorChange 5s infinite;
+}
+
   .grid-item h3, .grid-item p {
     opacity: 0;
     transition: opacity 0.9s ease;
@@ -335,8 +352,9 @@ body {
 footer{
     text-align: center;
     height: 130px;
-    overflow-x: hidden;
+    
 }
+
 
 footer a{
     text-decoration: none; /* Remove underline */
@@ -492,6 +510,8 @@ footer img{
   font-style: normal;
 }
 
+
+
 .product h3 {
   margin-right: 60px; /* Adjust as needed */
   font-family: "Zeyada", cursive;
@@ -561,9 +581,11 @@ button:active {
 
 
 .guia-tallas{
-  margin-right: 10px;
-  margin-top: 20px;
+  margin-right:2px;
+  margin-top: 5px;
+  
 }
+
 
 
 /* tabla magica aparece */
@@ -587,14 +609,26 @@ th {
 
 .grid-container-tshirt {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr; /* Three equal columns */
+  grid-template-columns: 1fr 1fr; /* Three equal columns */
   gap: 10px; /* Gap between items */
+}
+
+.grid-container-tshirt2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Three equal columns */
+  gap: 20px; /* Gap between items */
 }
 
 .grid-item-tshirt {
   text-align: center;
   padding: 20px;
-  border: 1px solid #ccc;
+
+}
+
+.envio-texto{
+  font-family: "Zen Tokyo Zoo", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 img {
@@ -615,19 +649,130 @@ img {
 }
 
 .grid-item-tshirt:nth-child(1) {
-  background-color: rgb(164, 150, 178);
+  background-color: rgba(172, 162, 184, 0.317);
 }
 .grid-item-tshirt:nth-child(2) {
-  background-color: blue;
-  width: 1000px;
-}
-.grid-item-tshirt:nth-child(3) {
-
+  background-color: rgba(255, 255, 255, 0.511);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-
   border-radius: 5px;
   margin-top: -50px;
+}
+
+
+/* -------------------------TSHIRT - GRID ITEM  ---------------------------- */
+
+.grid-item-tshirt-2:nth-child(2) {
+  background-color: rgba(197, 180, 180, 0.511);
+
+}
+
+
+
+/* -------------------------FORM---------------------------- */
+
+
+
+/* Form container styles */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Label styles */
+label {
+  font-weight: bold;
+}
+
+
+
+/* Input styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="checkbox"] {
+  width: 90%;
+  padding: 15px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Submit button styles */
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Checkbox styles */
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 5px;
+}
+
+/* Textarea styles */
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Readonly input styles */
+input[readonly] {
+  background-color: #f4f4f4;
+  color: #333;
+  cursor: not-allowed;
+}
+
+/* Styling for disabled inputs */
+input:disabled {
+  background-color: #f4f4f4;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+
+/*----------TEMPLATE------------*/
+.cart {
+  margin: 20px;
+}
+.cart h2 {
+  margin-bottom: 10px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+li img {
+  width: 100px;
+  margin-right: 20px;
+}
+.product-info {
+  flex: 1;
+}
+.quantity-input {
+  width: 40px;
+  text-align: center;
 }

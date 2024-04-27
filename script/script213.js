@@ -20,6 +20,25 @@ function createSlick(){
 
 }
 
+
+document.addEventListener('DOMContentLoaded', function() {
+	// Obtener el elemento del contador del carrito
+	const cartCount = document.querySelector('.cart-count');
+  
+	// Obtener el número de artículos guardados en Local Storage (si existe)
+	let itemCount = localStorage.getItem('itemCount');
+	if (!itemCount) {
+	  itemCount = 0;
+	} else {
+	  itemCount = parseInt(itemCount); // Parse as integer
+	}
+  
+	// Actualizar el texto del contador del carrito
+	cartCount.textContent = itemCount;
+  });
+
+
+
 createSlick();
 
 //Will not throw error, even if called multiple times.

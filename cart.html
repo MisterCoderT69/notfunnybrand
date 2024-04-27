@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFS</title>
+    <link rel="icon" href="images/logo_tab.png" type="image/png">
+    <link rel="stylesheet" href="style/style4.css">
+    
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="text">20% DE DESCUENTO EN PRIMERA COMPRA</div>
+        <div class="text">ACEPTAMOS BITCOIN</div>
+        <div class="text">ENVÍO GRATIS</div>
+        <div class="text">20% DE DESCUENTO EN PRIMERA COMPRA</div>
+        <div class="text">ACEPTAMOS BITCOIN</div>
+        <div class="text">ENVÍO GRATIS</div>
+      </div>
+
+
+
+      <div class="cart-icon">
+        <a href="cart.html">
+          <img src="images/bolsa-de-papel.png" alt="Carrito de compras">
+          <div class="cart-count">0</div>
+        </a>
+      </div>
+    
+      <div class="top-left">
+        <a href="menu.html">
+        <img id="logo" src="images/notfunny_logo-color_black.svg" alt="Your Image">
+        </a>
+      </div>
+
+    <div class="grid-container-tshirt2">
+        <div class="grid-item-tshirt">
+            CHECKOUT
+            <form>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required><br><br>
+                
+                <input type="checkbox" id="emailUpdates" name="emailUpdates" value="Envíame correos con noticias y ofertas">
+                <label for="emailUpdates">Envíame correos con noticias y ofertas</label><br><br>
+              
+                <label for="delivery">Entrega</label><br>
+                <input type="text" id="delivery" name="delivery" value="EXCLUSIVO PARA MÉXICO" readonly><br><br>
+              
+                <label for="firstName">Nombre</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Escribe tu nombre" required><br><br>
+              
+                <label for="lastName">Apellido</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Escribe tu apellido" required><br><br>
+              
+                <label for="address">Dirección</label>
+                <input type="text" id="address" name="address" placeholder="Escribe tu dirección" required><br><br>
+              
+                <label for="apartment">Departamento, suite, etc. (opcional)</label>
+                <input type="text" id="apartment" name="apartment" placeholder="Opcional"><br><br>
+              
+                <label for="postalCode">Código postal</label>
+                <input type="text" id="postalCode" name="postalCode" placeholder="Escribe tu código postal" required><br><br>
+              
+                <label for="city">Ciudad</label>
+                <input type="text" id="city" name="city" placeholder="Escribe tu Estado" required><br><br>
+              
+                <label for="phone">Teléfono (opcional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="Escribe tu número de teléfono"><br><br>
+              
+                <input type="checkbox" id="textUpdates" name="textUpdates" value="Envíame mensajes de texto con actualizaciones sobre mi pedido y otras noticias">
+                <label for="textUpdates">Envíame mensajes de texto con actualizaciones sobre mi pedido y otras noticias</label><br><br>
+              
+                <label for="shippingMethod">Método de envío</label><br>
+                <input type="text" id="shippingMethod" name="shippingMethod" value="Ingresa tu dirección de envío para ver los métodos de envío disponibles." readonly><br><br>
+              
+                <input type="submit" value="Enviar y Pagar" onclick="redirectToPage()">
+              </form>
+              
+              
+        </div>
+        <div id="cart-items" class="grid-item-tshirt-2">
+            <!-- Products will be dynamically added here -->
+            <div id="no-products-template" style="display: none;">
+                <p>No products in the cart. Keep buying!</p>
+            </div>
+        </div>
+    </div>
+
+
+  
+<footer>
+	<div class="footer_content">
+    <img src="" alt="">
+		<p><img src="images/tejido-de-punto.png" alt="" height="50px" width="50px"> by <a href="https://www.instagram.com/chiconochistoso69/">@chiconochistoso69</a></p>
+	</div>
+</footer>
+<script src="script/script.js"></script>
+<script src="script/script2.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const guiaTallasDiv = document.querySelector('.guia-tallas');
+    const guiaTallasTable = document.querySelector('.guia-tallas-table');
+
+    guiaTallasDiv.addEventListener('click', () => {
+        if (guiaTallasTable.style.display === 'none') {
+            guiaTallasTable.style.display = 'table';
+        } else {
+            guiaTallasTable.style.display = 'none';
+        }
+    });
+
+    function redirectToPage() {
+        // Redirect to another page
+        window.location.href = 'link.mercadopago.com.mx/notfunnybrand';
+    }
+});
+
+</script>
+
+</body>
+
+</html>
+

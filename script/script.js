@@ -1,17 +1,4 @@
-// Obtener el elemento del contador del carrito
-const cartCount = document.querySelector('.cart-count');
 
-// Obtener el número de artículos guardados en Local Storage (si existe)
-let itemCount = localStorage.getItem('itemCount');
-if (!itemCount) {
-  itemCount = 0;
-}
-
-// Actualizar el texto del contador del carrito
-cartCount.textContent = itemCount;
-
-// Actualizar el número de artículos en Local Storage (por ejemplo, al agregar o eliminar un artículo)
-// localStorage.setItem('itemCount', nuevoNumeroDeArticulos);
 
 
 window.addEventListener('scroll', function() {
@@ -31,3 +18,39 @@ window.addEventListener('scroll', function() {
     logo.src = 'images/notfunny_logo-color_black.svg';
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('addToCartBtn').addEventListener('click', function() {
+      const product = {
+          name: document.querySelector('.product h3').textContent,
+          price: document.querySelector('.product p').textContent,
+          size: document.getElementById('options').value,
+          image: document.querySelector('.grid-item-tshirt img').src
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Update the cart count in the DOM
+      const itemCount = cart.length;
+      const cartCountElement = document.querySelector('.cart-count');
+      cartCountElement.textContent = itemCount.toString();
+
+      alert('Producto agregado al carrito!');
+  });
+});
+
+
+
+// Get the cart array from local storage
+const cartItems = JSON.parse(localStorage.getItem('cart'));
+
+// Get the number of items in the cart
+const itemCount = cartItems.length;
+
+// Update the cart count in the DOM
+const cartCountElement = document.querySelector('.cart-count');
+cartCountElement.textContent = itemCount.toString();
+
+
