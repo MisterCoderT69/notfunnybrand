@@ -67,7 +67,7 @@
             onmouseover="this.src='images/benadrylshirt-back.png'"
             onmouseout="this.src='images/mens-champion-t-shirt-white-front-662da32512fe4.png'"> 
             <div class="text_container">
-              <h3>BENADRYL</h3>
+              <h3>BENADRYL ASCII</h3>
               <p style="margin-top:-50px ;">$696 <span>+ ENVIO GRATIS</span></p>
             </div>
           </div>
@@ -75,18 +75,18 @@
       </div>
       <div class="grid-item">
       <a href="tshirts.html">
-      <div class="grid-item"><img src="shirts/oxxo_sinfondo.png" alt=""> 
+      <div class="grid-item"><img src="images/notngodsilexiachampion-short.png" alt=""> 
         <div class="text_container">
-          <h3>SEXO T-SHIRT</h3>
+          <h3>NO TNEGO DSILEXIA</h3>
           <p style="margin-top:-50px ;">$696 <span>+ ENVIO GRATIS</span></p>
         </div>
       </div>
       </a>
       </div>
       <a href="tshirts.html">
-        <div class="grid-item"><img src="shirts/oxxo_sinfondo.png" alt=""> 
+        <div class="grid-item"><img src="images/WELLCUM-CHAMP.png" alt=""> 
           <div class="text_container">
-            <h3>SEXO T-SHIRT</h3>
+            <h3>WELL CUM</h3>
             <p style="margin-top:-50px ;">$696 <span>+ ENVIO GRATIS</span></p>
           </div>
         </div>
@@ -181,7 +181,10 @@
   // Update the image source when the window size changes
   window.addEventListener('resize', updateImageSrc);
 
-  
+  // Assuming 'element' is the element you want to capture pointer events on
+    element.addEventListener('mouseover', function(event) {
+      event.target.setPointerCapture(event.pointerId);
+    });
 </script>
 <script async src="script/script.js"></script>
 </body>
