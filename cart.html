@@ -36,6 +36,14 @@
       </div>
 
     <div class="grid-container-tshirt2">
+
+        <div id="cart-items" class="grid-item-tshirt-2">
+            <!-- Products will be dynamically added here -->
+            <div id="no-products-template" style="display: none;">
+                <p>No products in the cart. Keep buying!</p>
+            </div>
+        </div>
+
         <div class="grid-item-tshirt">
             <form>
                 <label for="email">Correo electrónico</label>
@@ -65,25 +73,13 @@
                 <label for="city">Ciudad</label>
                 <input type="text" id="city" name="city" placeholder="Escribe tu Estado" required><br><br>
               
-                <label for="phone">Teléfono (opcional)</label>
-                <input type="tel" id="phone" name="phone" placeholder="Escribe tu número de teléfono"><br><br>
-              
-                <input type="checkbox" id="textUpdates" name="textUpdates" value="Envíame mensajes de texto con actualizaciones sobre mi pedido y otras noticias">
-                <label for="textUpdates">Envíame mensajes de texto con actualizaciones sobre mi pedido y otras noticias</label><br><br>
-              
-                <label for="shippingMethod">Método de envío</label><br>
-                <input type="text" id="shippingMethod" name="shippingMethod" value="Ingresa tu dirección de envío para ver los métodos de envío disponibles." readonly><br><br>
-              
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" placeholder="Escribe tu número de teléfono" required><br><br>
+                                                        
                 <input type="submit" value="Enviar y Pagar" onclick="redirectToPage()">
               </form>
               
               
-        </div>
-        <div id="cart-items" class="grid-item-tshirt-2">
-            <!-- Products will be dynamically added here -->
-            <div id="no-products-template" style="display: none;">
-                <p>No products in the cart. Keep buying!</p>
-            </div>
         </div>
     </div>
 
