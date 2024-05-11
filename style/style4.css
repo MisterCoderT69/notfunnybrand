@@ -21,8 +21,8 @@ body {
 
   .top-left {
     position: fixed; /* Position the element fixed */
-    top: 10px; /* Position at the top */
-    left: 20px; /* Position at the left */
+    top: -1px; /* Position at the top */
+    left: -5px; /* Position at the left */
     width: 200px;
     z-index: 4; /* Asegura que esté por encima de otros elementos */
 
@@ -46,8 +46,8 @@ body {
   @media (max-width: 768px) {
     .cart-icon {
       position: fixed;
-      top: 30px; /* Distancia desde arriba */
-      right: 20px; /* Distancia desde la derecha */
+      top: 5px; /* Distancia desde arriba */
+      right: 1px; /* Distancia desde la derecha */
       z-index: 9999; /* Asegura que esté por encima de otros elementos */
       display: flex;
       align-items: center;
@@ -72,7 +72,7 @@ body {
   .top-bar {
     z-index: 2;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
     overflow: hidden;
     white-space: nowrap; /* Prevent text wrapping */
   }
@@ -95,6 +95,7 @@ body {
     font-weight: 400;
     font-style: normal;
     color: black;
+    font-size: 100px;
   }
 
   
@@ -105,7 +106,7 @@ body {
       transform: translateX(100vw); /* Start from the right side of the page */
     }
     to {
-      transform: translateX(-100vw); /* Move to the left side of the page */
+      transform: translateX(-500vw); /* Move to the left side of the page */
     }
   }
   
@@ -192,7 +193,7 @@ span {
 .image-container {
   position: relative;
   width: 100%;
-  height: 1400px; /* Set the height of your image container */
+  height: 2800px; /* Set the height of your image container */
   margin-top: 5px;
   margin-bottom: 50px;
   z-index: -1;
@@ -202,7 +203,7 @@ span {
 .image-container2 {
     position: relative;
     width: 100%;
-    height: 1400px; /* Set the height of your image container */
+    height: 2800px; /* Set the height of your image container */
     margin-top: 100px;
     margin-bottom: 50px;
     margin-right: -50px;
@@ -232,7 +233,7 @@ span {
     overflow: hidden; /* Hide the overflow text */
     animation: scroll 30s linear infinite; /* Change the animation speed and timing as needed */
     font-size: 200px;
-    color: white;
+    color: rgba(0, 0, 0, 0.666);
     font-family: "Zen Tokyo Zoo", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -247,7 +248,7 @@ span {
     overflow: hidden; /* Hide the overflow text */
     animation: scroll2 30s linear infinite; /* Change the animation speed and timing as needed */
     font-size: 300px;
-    color: white;
+    color: rgba(0, 0, 0, 0.666);
     font-family: "Bungee Hairline", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -262,7 +263,7 @@ span {
     overflow: hidden; /* Hide the overflow text */
     animation: scroll 30s linear infinite; /* Change the animation speed and timing as needed */
     font-size: 200px;
-    color: white;
+    color: rgba(0, 0, 0, 0.666);
     font-family: "Zen Tokyo Zoo", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -295,7 +296,7 @@ span {
     overflow: hidden; /* Hide the overflow text */
     animation: scroll4 30s linear infinite; /* Change the animation speed and timing as needed */
     font-size: 200px;
-    color: white;
+    color: rgba(0, 0, 0, 0.666);
     font-family: "Zen Tokyo Zoo", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -310,7 +311,7 @@ span {
     overflow: hidden; /* Hide the overflow text */
     animation: scroll3 30s linear infinite; /* Change the animation speed and timing as needed */
     font-size: 300px;
-    color: white;
+    color: rgba(0, 0, 0, 0.666);
     font-family: "Bungee Hairline", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -325,7 +326,7 @@ span {
     overflow: hidden; /* Hide the overflow text */
     animation: scroll4 30s linear infinite; /* Change the animation speed and timing as needed */
     font-size: 200px;
-    color: white;
+    color: rgba(0, 0, 0, 0.666);
     font-family: "Zen Tokyo Zoo", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -492,6 +493,31 @@ footer img{
   footer img{
       margin-bottom: -15px;
   }
+
+  .image-container {
+    width: 100%;
+    height: 1400px; /* Set the height of your image container */
+  }
+  
+  .image-container2 {
+      width: 100%;
+      height: 1400px; /* Set the height of your image container */
+    }
+
+    .text {
+      padding: 0 100px; /* Add more space between phrases */
+      animation: slideRightToLeft 15s linear infinite !important;
+      font-size: 50px;
+    }
+
+    @keyframes slideRightToLeft {
+      from {
+        transform: translateX(100vw); /* Start from the right side of the page */
+      }
+      to {
+        transform: translateX(-500vw); /* Move to the left side of the page */
+      }
+    }
 }
 
 
