@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFS</title>
+    <link rel="icon" href="images/logo_tab.png" type="image/png">
+    <link rel="stylesheet" href="style/style4.css">
+    
+</head>
+<body>
+    <div class="top-bar">
+        <div class="text">20% DE DESCUENTO EN PRIMERA COMPRA</div>
+        <div class="text">ACEPTAMOS BITCOIN</div>
+        <div class="text">ENVÍO GRATIS</div>
+        <div class="text">20% DE DESCUENTO EN PRIMERA COMPRA</div>
+        <div class="text">ACEPTAMOS BITCOIN</div>
+        <div class="text">ENVÍO GRATIS</div>
+      </div>
+
+
+      <div class="cart-icon">
+        <a href="cart.html">
+          <img src="images/bolsa-de-papel.png" alt="Carrito de compras">
+          <div class="cart-count">0</div>
+        </a>
+      </div>
+    
+      <div class="top-left">
+        <a href="menu.html">
+        <img id="logo" src="images/notfunny_logo-color_black.svg" alt="Your Image">
+        </a>
+      </div>
+
+
+
+  <div class="grid-container-tshirt">
+    <div class="grid-item-tshirt">
+        <img src="images/vista-frontal-tapa-negra-aislada_125540-1019-removebg-preview.png" alt="">
+    </div>
+    <div class="grid-item-tshirt">
+        <div class="product">
+            <h3>GORRA</h3>
+            <p>$ 369 MXN</p>
+            
+          </div>
+          <select id="options" name="options">
+              <option value="CH">CH</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+          </select>
+        <button id="addToCartBtn">Agregar al carrito</button>
+        <span><p class="envio-texto">ENVIO GRATIS</p></span>
+        <div class="guia-tallas">
+            <p class="guia-tallas-texto" >&rarr;GUIA DE TALLAS&larr;</p>
+            <table class="guia-tallas-table">
+                <tr>
+                    <th>Talla</th>
+                    <th>Medidas</th>
+                </tr>
+                <tr>
+                    <td>CH</td>
+                    <td>45x71</td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>50x73</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td>55x76</td>
+                </tr>
+                <tr>
+                    <td>XG</td>
+                    <td>60x78</td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+  
+<footer class="tshirt-footer">
+	<div class="footer_content" >
+    <img src="" alt="">
+		<p><img src="images/tejido-de-punto.png" alt="" height="50px" width="50px"> by <a href="https://www.instagram.com/chiconochistoso69/">@chiconochistoso69</a></p>
+	</div>
+</footer>
+<script src="script/script.js"></script>
+<script>
+    const guiaTallasDiv = document.querySelector('.guia-tallas');
+    const guiaTallasTable = document.querySelector('.guia-tallas-table');
+
+    guiaTallasDiv.addEventListener('click', () => {
+        if (guiaTallasTable.style.display === 'none') {
+            guiaTallasTable.style.display = 'table';
+        } else {
+            guiaTallasTable.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+
+</html>
+
+
+
+
+

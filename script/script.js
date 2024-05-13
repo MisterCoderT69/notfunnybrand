@@ -33,11 +33,19 @@ document.addEventListener('DOMContentLoaded', function() {
       };
 
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push(product);
+      let existingProduct = cart.find(item => item.name === product.name && item.size === product.size);
+
+      if (existingProduct) {
+          existingProduct.quantity += 1; // Increase quantity if product already exists in cart
+      } else {
+          product.quantity = 1; // Set quantity to 1 for new product
+          cart.push(product);
+      }
+
       localStorage.setItem('cart', JSON.stringify(cart));
 
       // Update the cart count in the DOM
-      const itemCount = cart.length;
+      const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
       const cartCountElement = document.querySelector('.cart-count');
       cartCountElement.textContent = itemCount.toString();
 

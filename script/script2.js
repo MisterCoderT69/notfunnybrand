@@ -1,33 +1,89 @@
 document.addEventListener('DOMContentLoaded', function() {
     const cartListElement = document.getElementById('cart-items');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let total = 0;
+    let cartItems = {}; // Object to keep track of items by name and size
 
     cart.forEach(product => {
-        // Extract the numeric part of the price string and convert it to a number
-        const price = parseFloat(product.price.replace(/[^\d.]/g, '')); // Remove non-numeric characters
-        total += price;
+        const price = parseFloat(product.price.replace(/[^\d.]/g, ''));
+        total += price * product.quantity; // Update total based on quantity
 
-        const li = document.createElement('li');
-        li.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <div class="product-info">
-                <h3>${product.name}</h3>
-                <p>Price: ${product.price}</p>
-                <p>Size: ${product.size}</p>
-            </div>
-        `;
-        cartListElement.appendChild(li);
+        // Check if the item already exists in the cart
+        const key = `${product.name}-${product.size}`;
+        cartItems[key] = {
+            ...product,
+            quantity: product.quantity
+        };
     });
+
+    // Function to update total price
+    function updateTotal() {
+        total = 0;
+        for (const key in cartItems) {
+            if (cartItems.hasOwnProperty(key)) {
+                const item = cartItems[key];
+                total += parseFloat(item.price.replace(/[^\d.]/g, '')) * item.quantity;
+            }
+        }
+        totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)}`;
+        localStorage.setItem('cart', JSON.stringify(Object.values(cartItems)));
+    }
+
+    // Iterate over the cart items and create the list items
+    for (const key in cartItems) {
+        if (cartItems.hasOwnProperty(key)) {
+            const item = cartItems[key];
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <div class="product-info">
+                    <h3>${item.name}</h3>
+                    <p>Precio: ${item.price}</p>
+                    <p>Talla: ${item.size}</p>
+                    <p>Cantidad: ${item.quantity}</p>
+                    <p>
+                        <button class="remove-btn">-</button>
+                        <button class="add-btn">+</button>
+                    </p>
+                </div>
+            `;
+            const addButton = li.querySelector('.add-btn');
+            const removeButton = li.querySelector('.remove-btn');
+
+            addButton.addEventListener('click', function() {
+                const newQuantity = item.quantity + 1 || 1; // Ensure quantity is at least 1
+                cartItems[key].quantity = newQuantity; // Update quantity in cartItems
+                updateTotal(); // Update total price
+                li.querySelector('p:nth-child(4)').innerText = `Cantidad: ${newQuantity}`; // Update quantity in DOM
+            });
+
+            removeButton.addEventListener('click', function() {
+                const newQuantity = item.quantity - 1 || 0; // Ensure quantity is at least 0
+                if (newQuantity === 0) {
+                    delete cartItems[key]; // Remove item if quantity is zero
+                    li.remove(); // Remove the list item from the DOM
+                } else {
+                    cartItems[key].quantity = newQuantity; // Update quantity in cartItems
+                    li.querySelector('p:nth-child(4)').innerText = `Cantidad: ${newQuantity}`; // Update quantity in DOM
+                }
+                updateTotal(); // Update total price
+            });
+
+            cartListElement.appendChild(li);
+        }
+    }
 
     // Create a div for the total price
     const totalDiv = document.createElement('div');
     totalDiv.classList.add('total-price');
-    totalDiv.innerHTML = `Total Price: $${total.toFixed(2)}`;
+    totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)}`;
 
     // Insert the total price div after the product items
     cartListElement.appendChild(totalDiv);
 });
+
+
+
 
 
 // Get the cart items div
@@ -43,4 +99,12 @@ if (localStorage.length === 0) {
 } else {
     // Products are present in the local storage, so display them
     // You would add your existing logic here to display the products
+}
+
+
+function redirectToPage() {
+    // Redirect to another page after 5 seconds
+    setTimeout(function() {
+        window.location.href = 'https://link.mercadopago.com.mx/notfunnybrand';
+    }, 10000); // 5000 milliseconds = 5 seconds
 }

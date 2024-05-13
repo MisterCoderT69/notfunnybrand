@@ -769,14 +769,15 @@ input[type="checkbox"]:focus  {
 /* Submit button styles */
 input[type="submit"] {
   width: 70%;
-  padding: 10px;
+  padding: 5px;
   margin-top: 20px;
   border: none;
-  background-color: #55616f;
+  background-color: #3b7fcd;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-
+  text-align: center;
+  margin-left: 100px;
 }
 
 /* Checkbox styles */
@@ -832,6 +833,8 @@ input[readonly] {
   margin-top: 20px;
 }
 
+
+
 .cart {
   margin: 20px;
   background-color: #fff; /* White background similar to iOS */
@@ -856,6 +859,9 @@ li {
   padding: 10px;
   border-bottom: 1px solid #ddd;
   flex-direction: row-reverse; /* Reverse the order of flex items */
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 li img {
@@ -873,4 +879,6 @@ li img {
 
 .total-price{
   border-top: 2px solid black;
+  font-size: 20px;
 }
+
