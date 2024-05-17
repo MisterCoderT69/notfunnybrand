@@ -29,6 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('cart', JSON.stringify(Object.values(cartItems)));
     }
 
+    // Function to get the number of distinct products in the cart
+    function getNumberOfDistinctProducts() {
+        return Object.keys(cartItems).length;
+    }
+
     // Iterate over the cart items and create the list items
     for (const key in cartItems) {
         if (cartItems.hasOwnProperty(key)) {
@@ -51,10 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const removeButton = li.querySelector('.remove-btn');
 
             addButton.addEventListener('click', function() {
-                const newQuantity = item.quantity + 1 || 1; // Ensure quantity is at least 1
-                cartItems[key].quantity = newQuantity; // Update quantity in cartItems
-                updateTotal(); // Update total price
-                li.querySelector('p:nth-child(4)').innerText = `Cantidad: ${newQuantity}`; // Update quantity in DOM
+                if (getNumberOfDistinctProducts() < 1) {
+                    const newQuantity = item.quantity + 1 || 1; // Ensure quantity is at least 1
+                    cartItems[key].quantity = newQuantity; // Update quantity in cartItems
+                    updateTotal(); // Update total price
+                    li.querySelector('p:nth-child(4)').innerText = `Cantidad: ${newQuantity}`; // Update quantity in DOM
+                } else {
+                    alert('El máximo de productos permitidos en el carrito es 1');
+                }
             });
 
             removeButton.addEventListener('click', function() {

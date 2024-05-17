@@ -4,6 +4,36 @@
 //CAMBIAR LA FUENTE DEL TEXTO 
 //CAMBIAR LA FUENTE DEL TEXTO 
 
+// Get the cart array from local storage
+const cartItems = JSON.parse(localStorage.getItem('cart'));
+
+// Get the number of items in the cart
+const itemCount = cartItems.length;
+
+// Update the cart count in the DOM
+const cartCountElement = document.querySelector('.cart-count');
+cartCountElement.textContent = itemCount.toString();
+
+
+document.getElementById('addToCartBtn').addEventListener('click', function() {
+  const product = {
+      name: document.querySelector('.product h3').textContent,
+      price: document.querySelector('.product p').textContent,
+      size: document.getElementById('options').value,
+      image: document.querySelector('.grid-item-tshirt img').src
+  };
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let existingProductIndex = cart.findIndex(item => item.name === product.name && item.size === product.size);
+
+  if (existingProductIndex !== -1) {
+      alert('Ya tienes este producto en el carrito. Solo puedes comprar uno.');
+  } else {
+
+  }
+});
+
+
 
 window.addEventListener('scroll', function() {
   var logo = document.getElementById('logo');
@@ -53,16 +83,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
-
-// Get the cart array from local storage
-const cartItems = JSON.parse(localStorage.getItem('cart'));
-
-// Get the number of items in the cart
-const itemCount = cartItems.length;
-
-// Update the cart count in the DOM
-const cartCountElement = document.querySelector('.cart-count');
-cartCountElement.textContent = itemCount.toString();
 
 
