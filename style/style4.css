@@ -198,6 +198,7 @@ span {
   margin-bottom: 50px;
   z-index: -1;
   overflow-x: hidden;
+  overflow: hidden;
 }
 
 .image-container2 {
