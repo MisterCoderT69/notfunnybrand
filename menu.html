@@ -13,10 +13,10 @@
 
   <div class="cart-icon">
     <a href="cart.html">
-      <img src="images/bolsa-de-papel.png" alt="Carrito de compras">
-      <div class="cart-count">0</div>
+      <img id="cart-image" src="images/papel-arrugado.png" alt="Carrito de compras">
+      <div id="cart-count" class="cart-count"></div>
     </a>
-  </div>
+</div>
 
   <div class="top-left">
     <img id="logo" src="images/notfunny_logo-color_black.svg" alt="Your Image">
@@ -51,24 +51,24 @@
     <div class="grid-container">
       <a href="tshirts.html">
       <div class="grid-item">
-        <img src="shirts/oxxo_sinfondo.png" alt=""
+        <img src="shirts/sexxo-tshirttt.png" alt=""
         onmouseover="this.src='images/sexo-shirt.png'"
-        onmouseout="this.src='shirts/oxxo_sinfondo.png'"> 
+        onmouseout="this.src='shirts/sexxo-tshirttt.png'"> 
         <div class="text_container">
           <h3>SEXO</h3>
-          <p style="margin-top:-50px ;">$696 <span>ENVIO GRATIS</span></p>
+          <p style="margin-top:-50px ;">$690 <span>4/5 PIEZAS</span></p>
         </div>
       </div>
       </a>
       <div class="grid-item">
         <a href="tshirts.html">
           <div class="grid-item">
-            <img src="images/mens-champion-t-shirt-white-front-662da32512fe4.png" alt=""
-            onmouseover="this.src='images/benadrylshirt-back.png'"
-            onmouseout="this.src='images/mens-champion-t-shirt-white-front-662da32512fe4.png'"> 
+            <img src="images/molly-tshirt.png" alt=""
+            onmouseover="this.src='images/add-tshirt.png'"
+            onmouseout="this.src='images/molly-tshirt.png'"> 
             <div class="text_container">
-              <h3>BENADRYL ASCII</h3>
-              <p style="margin-top:-50px ;">$696 <span>ENVIO GRATIS</span></p>
+              <h3>MOLLY / ADDERALL</h3>
+              <p style="margin-top:-50px ;">$740 <span>2/3 PIEZAS</span></p>
             </div>
           </div>
           </a>
@@ -78,7 +78,7 @@
       <div class="grid-item"><img src="images/notngodsilexiachampion-short.png" alt=""> 
         <div class="text_container">
           <h3>NO TNEGO DSILEXIA</h3>
-          <p style="margin-top:-50px ;">$696 <span>ENVIO GRATIS</span></p>
+          <p style="margin-top:-50px ;">$690 <span>5/6 PIEZAS</span></p>
         </div>
       </div>
       </a>
@@ -87,11 +87,33 @@
         <div class="grid-item"><img src="images/WELLCUM-CHAMP.png" alt=""> 
           <div class="text_container">
             <h3>WELL CUM</h3>
-            <p style="margin-top:-50px ;">$696 <span>ENVIO GRATIS</span></p>
+            <p style="margin-top:-50px ;">$690 <span>3/3 PIEZAS</span></p>
           </div>
         </div>
         </a>
+        
+          <a href="tshirts.html">
+            <div class="grid-item">
+              <div class="overlay-tshirt">
+              <img src="images/ife-tshirt.png" alt=""> 
+              <div class="overlay-text">NO DISPONIBLE 😢</div>
+            </div>
+            </div>
+          </a>
+       
+          <a href="tshirts.html">
+            <div class="grid-item">
+              <div class="overlay-tshirt">
+              <img src="images/porritos _minimalista.png" alt=""> 
+              <div class="overlay-text">NO DISPONIBLE 😢</div>
+            </div>
+            </div>
+          </a>
+
+        
     </div>
+    
+
 
     <div class="image-container2">
       <img src="images/camiseta-blanca-hombre-basica-cuerpo-completo.png" alt="Your Image">
@@ -156,6 +178,41 @@
       </div>
     </div>
 
+
+    <div class="top-bar2">
+      <div class="text"><p>EXTRAS</p></div>
+      <div class="text"><p>EXTRAS</p></div>
+      <div class="text"><p>EXTRAS</p></div>
+      <div class="text"><p>EXTRAS</p></div>
+      <div class="text"><p>EXTRAS</p></div>
+      <div class="text"><p>EXTRAS</p></div>
+    </div>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <a href="gorra.html">
+        <div class="grid-item">
+          <img src="images/vista-frontal-tapa-negra-aislada_125540-1019-removebg-preview.png" alt=""> 
+          <div class="text_container">
+            <h3>CIGARRO HERBAL</h3>
+            <p style="margin-top: -50px;">$369</p>
+          </div>
+        </a>
+        </div>
+      </div>
+      <div class="grid-item">
+        <a href="gorra.html">
+        <div class="grid-item">
+          <img src="shirts/stickers.png" alt=""> 
+          <div class="text_container">
+            <h3>PAQUETE STICKERS</h3>
+            <p style="margin-top: -50px;">$100</p>
+          </div>
+        </a>
+        </div>
+      </div>     
+
+
   </section>
   
 <footer>
@@ -165,27 +222,26 @@
 	</div>
 </footer>
 <script>
-  function updateImageSrc() {
-      const img = document.getElementById('dynamic-image');
-      if (window.innerWidth < 600) {
-          img.src = 'images/fafa_antisocailweedclub.jpg';
+      // Get the cart array from local storage
+      const cartItems = JSON.parse(localStorage.getItem('cart'));
+
+      // Get the number of items in the cart
+      const itemCount = cartItems ? cartItems.length : 0;
+
+      // Update the cart count in the DOM
+      const cartCountElement = document.getElementById('cart-count');
+      cartCountElement.textContent = itemCount.toString();
+
+      // Update the cart image based on the itemCount
+      const cartImage = document.getElementById('cart-image');
+      if (itemCount === 1) {
+          cartImage.src = 'images/bolsa-de-papel.png'; // Cambiar por la ruta de tu nueva imagen
       } else {
-          img.src = 'images/tess_yair_dos.png';
+          cartImage.src = 'images/papel-arrugado.png'; // Cambiar por la ruta de tu imagen original
       }
-  }
-
-  // Call the function initially
-  updateImageSrc();
-
-  // Update the image source when the window size changes
-  window.addEventListener('resize', updateImageSrc);
-
-  // Assuming 'element' is the element you want to capture pointer events on
-    element.addEventListener('mouseover', function(event) {
-      event.target.setPointerCapture(event.pointerId);
-    });
 </script>
 <script async src="script/script.js"></script>
+
 </body>
 
 </html>

@@ -11,21 +11,21 @@
 </head>
 <body>
     <div class="top-bar">
-        <div class="text">20% DE DESCUENTO EN PRIMERA COMPRA</div>
-        <div class="text">ACEPTAMOS BITCOIN</div>
-        <div class="text">ENVÍO GRATIS</div>
-        <div class="text">20% DE DESCUENTO EN PRIMERA COMPRA</div>
-        <div class="text">ACEPTAMOS BITCOIN</div>
-        <div class="text">ENVÍO GRATIS</div>
+        <div class="text" style="font-size: 50px;">20% DE DESCUENTO EN PRIMERA COMPRA</div>
+        <div class="text" style="font-size: 50px;">ACEPTAMOS PAGOS EN CRIPTOMONEDAS</div>
+        <div class="text" style="font-size: 50px;">ENVÍO GRATIS</div>
+        <div class="text" style="font-size: 50px;">20% DE DESCUENTO EN PRIMERA COMPRA</div>
+        <div class="text" style="font-size: 50px;">ACEPTAMOS PAGOS EN CRIPTOMONEDAS</div>
+        <div class="text" style="font-size: 50px;">ENVÍO GRATIS</div>
       </div>
 
 
       <div class="cart-icon">
         <a href="cart.html">
-          <img src="images/bolsa-de-papel.png" alt="Carrito de compras">
-          <div class="cart-count">0</div>
+          <img id="cart-image" src="images/papel-arrugado.png" alt="Carrito de compras">
+          <div id="cart-count" class="cart-count"></div>
         </a>
-      </div>
+    </div>
     
       <div class="top-left">
         <a href="menu.html">
@@ -37,22 +37,25 @@
 
   <div class="grid-container-tshirt">
     <div class="grid-item-tshirt">
-        <img src="shirts/oxxo_sinfondo.png" alt="">
+        <img src="shirts/sexxo-tshirttt.png" alt="">
     </div>
     <div class="grid-item-tshirt">
         <div class="product">
             <h3>OXXO TSHIRT</h3>
-            <p>$ 690 MXN</p>
+            <p id="price">$ 690 MXN</p>
             
           </div>
           <select id="options" name="options">
-              <option value="CH">CH</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
+            <option value="XL">XL</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="CH">CH</option>
           </select>
+          <select id="options_blank" name="options_blank">
+            <option value="PREMIUM">PREMIUM</option>
+            <option value="BASIC">BASIC</option>
+        </select>
         <button id="addToCartBtn">Agregar al carrito</button>
-        <span><p class="envio-texto">ENVIO GRATIS</p></span>
         <div class="guia-tallas">
             <p class="guia-tallas-texto" >&rarr;GUIA DE TALLAS&larr;</p>
             <table class="guia-tallas-table">
@@ -90,7 +93,59 @@
 	</div>
 </footer>
 <script src="script/script.js"></script>
+
 <script>
+
+// Get the cart array from local storage
+let items = JSON.parse(localStorage.getItem('cart'));
+
+// Get the number of items in the cart
+const count = items ? items.length : 0;
+
+// Update the cart count in the DOM
+const countElement = document.getElementById('cart-count');
+countElement.textContent = count.toString();
+
+// Update the cart image based on the itemCount
+const image = document.getElementById('cart-image');
+if (count === 1) {
+    image.src = 'images/bolsa-de-papel.png'; // Change to the path of your new image
+} else {
+    image.src = 'images/papel-arrugado.png'; // Change to the path of your original image
+}
+
+
+
+const priceElement = document.getElementById('price');
+    const optionsBlank = document.getElementById('options_blank');
+    const optionsSize = document.getElementById('options');
+    const optionCH = optionsSize.querySelector('option[value="CH"]');
+
+    optionsBlank.addEventListener('change', function() {
+        if (this.value === 'BASIC') {
+            priceElement.textContent = '$ 490 MXN';
+            optionCH.disabled = false;
+        } else if (this.value === 'PREMIUM') {
+            priceElement.textContent = '$ 690 MXN';
+            optionCH.disabled = true;
+            if (optionsSize.value === 'CH') {
+                optionsSize.value = ''; // Reset the selected value
+                alert('No hay talla CH disponible para PREMIUM');
+            }
+        } else {
+            priceElement.textContent = '$ 690 MXN';
+            optionCH.disabled = false;
+        }
+    });
+
+    optionsSize.addEventListener('change', function() {
+        if (optionsBlank.value === 'PREMIUM' && this.value === 'CH') {
+            optionsSize.value = ''; // Reset the selected value
+            alert('No hay talla CH disponible para PREMIUM');
+        }
+    });
+
+
 
     
     const guiaTallasDiv = document.querySelector('.guia-tallas');
@@ -103,6 +158,7 @@
             guiaTallasTable.style.display = 'none';
         }
     });
+
 </script>
 
 </body>

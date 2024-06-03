@@ -117,3 +117,5 @@ function redirectToPage() {
         window.location.href = 'https://link.mercadopago.com.mx/notfunnybrand';
     }, 10000); // 5000 milliseconds = 5 seconds
 }
+
+

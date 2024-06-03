@@ -225,6 +225,45 @@ span {
     
   }
 
+  .overlay-tshirt {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .grid-item {
+    position: relative;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%; /* Ensure text doesn't exceed image width */
+    max-height: 100%; /* Ensure text doesn't exceed image height */
+    background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    text-align: center; /* Center text horizontally */
+    padding: 10px; /* Add padding around text */
+    box-sizing: border-box; /* Include padding in width and height */
+  }
+  
+  .overlay-tshirt:hover .overlay-text {
+    display: flex; /* Show overlay on hover */
+  }
+  
+
+
+
+
+
+
+  
+
 .scrolling-text {
     position: absolute;
     top: 15%; /* Position the text in the middle vertically */
@@ -568,6 +607,30 @@ select#options option {
 select#options option:checked {
   background-color: #000000;
 }
+
+/* Style for the select element2 */
+select#options_blank {
+  padding: 10px;
+  font-size: 16px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  border-radius: 5px;
+  width: 206px;
+  margin-top: 20px;
+}
+
+/* Style for the options */
+select#options_blank option {
+  padding: 5px;
+}
+
+/* Style when an option is selected */
+select#options_blank option:checked {
+  background-color: #000000;
+}
+
+
 
 label {
   margin-top: 10px;

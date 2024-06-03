@@ -23,13 +23,12 @@
       </div>
 
 
-
       <div class="cart-icon">
         <a href="cart.html">
-          <img src="images/bolsa-de-papel.png" alt="Carrito de compras">
-          <div class="cart-count">0</div>
+          <img id="cart-image" src="images/papel-arrugado.png" alt="Carrito de compras">
+          <div id="cart-count" class="cart-count"></div>
         </a>
-      </div>
+    </div>
     
       <div class="top-left">
         <a href="menu.html">
@@ -97,6 +96,25 @@
 <script src="script/script.js"></script>
 <script src="script/script2.js"></script>
 <script>
+  // Get the cart array from local storage
+  let items = JSON.parse(localStorage.getItem('cart'));
+
+// Get the number of items in the cart
+const count = items ? items.length : 0;
+
+// Update the cart count in the DOM
+const countElement = document.getElementById('cart-count');
+countElement.textContent = count.toString();
+
+// Update the cart image based on the itemCount
+const image = document.getElementById('cart-image');
+if (count === 1) {
+    image.src = 'images/bolsa-de-papel.png'; // Change to the path of your new image
+} else {
+    image.src = 'images/papel-arrugado.png'; // Change to the path of your original image
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const guiaTallasDiv = document.querySelector('.guia-tallas');
     const guiaTallasTable = document.querySelector('.guia-tallas-table');
@@ -125,6 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Clear the value of the hidden input field
     document.getElementById('localStorageData').value = '';
   });
+
+
+
 
 </script>
 
