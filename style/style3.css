@@ -12,7 +12,7 @@ body {
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
-    background: url('../images/videoplayback.gif') no-repeat center center fixed; /* Replace with the path to your GIF */
+    background: url('../images/giphy.webp') no-repeat center center fixed; /* Replace with the path to your GIF */
     background-size: cover; /* This will make the background cover the whole area */
   }
 
