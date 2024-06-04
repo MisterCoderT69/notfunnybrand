@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOTFUNNY</title>
+    <title>NOTFUNNYBRAND</title>
     <link rel="icon" href="images/logo_tab.png" type="image/png">
     <link rel="stylesheet" href="style/style4.css">
     
@@ -13,8 +13,8 @@
 
   <div class="cart-icon">
     <a href="cart.html">
-      <img id="cart-image" src="images/papel-arrugado.png" alt="Carrito de compras">
-      <div id="cart-count" class="cart-count"></div>
+      <img id="cart-image" src="images/bolsa-de-papel.png" alt="Carrito de compras">
+      <div id="cart-count" class="cart-count">👀</div>
     </a>
 </div>
 
@@ -24,11 +24,11 @@
 
   <section>
     <div class="top-bar">
-      <div class="text">DESCUENTO EN PRIMERA COMPRA</div>
-      <div class="text">ACEPTAMOS BITCOIN</div>
+      <div class="text">REGALOS EN PRIMERA COMPRA</div>
+      <div class="text">ACEPTAMOS CRIPTOMONEDAS</div>
       <div class="text">ENVÍO GRATIS</div>
-      <div class="text">DESCUENTO EN PRIMERA COMPRA</div>
-      <div class="text">ACEPTAMOS BITCOIN</div>
+      <div class="text">REGALOS EN PRIMERA COMPRA</div>
+      <div class="text">ACEPTAMOS CRIPTOMONEDAS</div>
       <div class="text">ENVÍO GRATIS</div>
     </div>
 
@@ -92,7 +92,7 @@
         </div>
         </a>
         
-          <a href="tshirts.html">
+          <a href="">
             <div class="grid-item">
               <div class="overlay-tshirt">
               <img src="images/ife-tshirt.png" alt=""> 
@@ -101,7 +101,7 @@
             </div>
           </a>
        
-          <a href="tshirts.html">
+          <a href="">
             <div class="grid-item">
               <div class="overlay-tshirt">
               <img src="images/porritos _minimalista.png" alt=""> 
@@ -222,23 +222,7 @@
 	</div>
 </footer>
 <script>
-      // Get the cart array from local storage
-      const cartItems = JSON.parse(localStorage.getItem('cart'));
 
-      // Get the number of items in the cart
-      const itemCount = cartItems ? cartItems.length : 0;
-
-      // Update the cart count in the DOM
-      const cartCountElement = document.getElementById('cart-count');
-      cartCountElement.textContent = itemCount.toString();
-
-      // Update the cart image based on the itemCount
-      const cartImage = document.getElementById('cart-image');
-      if (itemCount === 1) {
-          cartImage.src = 'images/bolsa-de-papel.png'; // Cambiar por la ruta de tu nueva imagen
-      } else {
-          cartImage.src = 'images/papel-arrugado.png'; // Cambiar por la ruta de tu imagen original
-      }
 </script>
 <script async src="script/script.js"></script>
 

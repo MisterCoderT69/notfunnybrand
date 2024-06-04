@@ -22,8 +22,8 @@
 
       <div class="cart-icon">
         <a href="cart.html">
-          <img id="cart-image" src="images/papel-arrugado.png" alt="Carrito de compras">
-          <div id="cart-count" class="cart-count"></div>
+          <img id="cart-image" src="images/bolsa-de-papel.png" alt="Carrito de compras">
+          <div id="cart-count" class="cart-count">👀</div>
         </a>
     </div>
     
@@ -39,7 +39,7 @@
     <div class="grid-item-tshirt">
         <img src="shirts/sexxo-tshirttt.png" alt="">
     </div>
-    <div class="grid-item-tshirt">
+    <div class="grid-item-tshirt second-item">
         <div class="product">
             <h3>OXXO TSHIRT</h3>
             <p id="price">$ 690 MXN</p>
@@ -95,24 +95,6 @@
 <script src="script/script.js"></script>
 
 <script>
-
-// Get the cart array from local storage
-let items = JSON.parse(localStorage.getItem('cart'));
-
-// Get the number of items in the cart
-const count = items ? items.length : 0;
-
-// Update the cart count in the DOM
-const countElement = document.getElementById('cart-count');
-countElement.textContent = count.toString();
-
-// Update the cart image based on the itemCount
-const image = document.getElementById('cart-image');
-if (count === 1) {
-    image.src = 'images/bolsa-de-papel.png'; // Change to the path of your new image
-} else {
-    image.src = 'images/papel-arrugado.png'; // Change to the path of your original image
-}
 
 
 

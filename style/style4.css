@@ -566,7 +566,7 @@ footer img{
 .product {
   display: flex;
   justify-content: space-between;
-  margin-top: 150px;
+  margin-top: 5px;
 }
 
 .product p{
@@ -672,7 +672,7 @@ button:active {
 
 .guia-tallas{
   margin-right:2px;
-  margin-top: -15px;
+  margin-top: 10px;
   
 }
 
@@ -759,7 +759,7 @@ img {
   align-items: center;
   padding: 20px;
   border-radius: 5px;
-  margin-top: -50px;
+  margin-top: 80px;
 }
 
 
@@ -832,17 +832,19 @@ input[type="checkbox"]:focus  {
 
 /* Submit button styles */
 input[type="submit"] {
-  width: 70%;
+  width: 90%;
+  height: 40px;
   padding: 5px;
-  margin-top: 20px;
+  margin: 20px auto 0;
   border: none;
   background-color: #3b7fcd;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
-  margin-left: 100px;
+  display: block; 
 }
+
 
 /* Checkbox styles */
 input[type="checkbox"] {
@@ -878,14 +880,25 @@ input[readonly] {
 
 @media only screen and (max-width: 900px) {
 
+  
+
   .grid-item-tshirt{
-    width: 390px;
+    width: 350px;
     margin-top: 10px !important;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
   }
 
-  .grid-container-tshirt2{
-    margin-top: 70px;
+
+
+
+
+  .grid-item-tshirt-2 {
+    margin-top: 50px;
+  
   }
+
 
 }
 
