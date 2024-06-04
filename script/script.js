@@ -4,8 +4,8 @@
 //CAMBIAR LA FUENTE DEL TEXTO 
 //CAMBIAR LA FUENTE DEL TEXTO 
 
-// Get the cart array from local storage
-const cartItems = JSON.parse(localStorage.getItem('cart'));
+// Get the cart array from local storage or initialize it as an empty array
+const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Get the number of items in the cart
 const itemCount = cartItems.length;
@@ -14,74 +14,22 @@ const itemCount = cartItems.length;
 const cartCountElement = document.querySelector('.cart-count');
 cartCountElement.textContent = itemCount.toString();
 
-
 document.getElementById('addToCartBtn').addEventListener('click', function() {
-  const product = {
-      name: document.querySelector('.product h3').textContent,
-      price: document.querySelector('.product p').textContent,
-      size: document.getElementById('options').value,
-      image: document.querySelector('.grid-item-tshirt img').src
-  };
+    const product = {
+        name: document.querySelector('.product h3').textContent,
+        price: document.getElementById('price').textContent,
+        size: document.getElementById('options').value,
+        category: document.getElementById('options_blank').value,
+        image: document.querySelector('.grid-item-tshirt img')?.src || '' // Assuming the image might not be present
+    };
 
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  let existingProductIndex = cart.findIndex(item => item.name === product.name && item.size === product.size);
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  if (existingProductIndex !== -1) {
-      alert('Ya tienes este producto en el carrito. Solo puedes comprar uno.');
-  } else {
+    // Remove check for existing product
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-  }
+    // Update the cart count in the DOM
+    const itemCount = cart.length;
+    cartCountElement.textContent = itemCount.toString();
 });
-
-
-
-window.addEventListener('scroll', function() {
-  var logo = document.getElementById('logo');
-  var scrollHeight = window.scrollY || document.documentElement.scrollTop;
-
-  // Change the image source when scroll height reaches 2000px
-  if (scrollHeight > 2900) {
-    logo.src = 'images/notfunnycap-logo-black-removebg-preview.svg';
-  } 
-  // Change the image source when scroll height reaches 1400px
-  else if (scrollHeight > 1400) {
-    logo.src = 'images/notfunnyshirt-logo-black-removebg-preview.svg';
-  } 
-  // Default image source
-  else {
-    logo.src = 'images/notfunny_logo-color_black.svg';
-  }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('addToCartBtn').addEventListener('click', function() {
-      const product = {
-          name: document.querySelector('.product h3').textContent,
-          price: document.querySelector('.product p').textContent,
-          size: document.getElementById('options').value,
-          image: document.querySelector('.grid-item-tshirt img').src
-      };
-
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      let existingProduct = cart.find(item => item.name === product.name && item.size === product.size);
-
-      if (existingProduct) {
-          existingProduct.quantity += 1; // Increase quantity if product already exists in cart
-      } else {
-          product.quantity = 1; // Set quantity to 1 for new product
-          cart.push(product);
-      }
-
-      localStorage.setItem('cart', JSON.stringify(cart));
-
-      // Update the cart count in the DOM
-      const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
-      const cartCountElement = document.querySelector('.cart-count');
-      cartCountElement.textContent = itemCount.toString();
-
-      alert('Producto agregado al carrito!');
-  });
-});
-
-
-

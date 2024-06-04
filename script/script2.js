@@ -119,6 +119,3 @@ function redirectToPage() {
 }
 
 
-window.onload = function() {
-    localStorage.clear();
-};
