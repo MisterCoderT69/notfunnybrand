@@ -118,4 +118,4 @@ function redirectToPage() {
     }, 10000); // 5000 milliseconds = 5 seconds
 }
 
-
+localStorage.clear();
