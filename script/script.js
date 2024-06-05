@@ -20,7 +20,8 @@ document.getElementById('addToCartBtn').addEventListener('click', function() {
         price: document.getElementById('price').textContent,
         size: document.getElementById('options').value,
         category: document.getElementById('options_blank').value,
-        image: document.querySelector('.grid-item-tshirt img')?.src || '' // Assuming the image might not be present
+        image: document.querySelector('.grid-item-tshirt img')?.src || '', // Assuming the image might not be present
+        quantity: 1 // Set quantity to 1
     };
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
