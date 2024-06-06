@@ -10,10 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Check if the item already exists in the cart
         const key = `${product.name}-${product.size}`;
-        cartItems[key] = {
-            ...product,
-            quantity: product.quantity
-        };
+        if (cartItems[key]) {
+            cartItems[key].quantity += product.quantity; // Increment quantity if item exists
+        } else {
+            cartItems[key] = {
+                ...product,
+                quantity: product.quantity
+            };
+        }
     });
 
     // Function to update total price
@@ -25,7 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 total += parseFloat(item.price.replace(/[^\d.]/g, '')) * item.quantity;
             }
         }
-        totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)}`;
+
+        if (total > 700) {
+            totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)} - Envío Gratis`;
+        } else {
+            totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)}`;
+        }
+
         localStorage.setItem('cart', JSON.stringify(Object.values(cartItems)));
     }
 
@@ -44,8 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="product-info">
                     <h3>${item.name}</h3>
                     <p>Precio: ${item.price}</p>
+                    <p>Categoria: ${item.category}</p>
                     <p>Talla: ${item.size}</p>
-                    <p>Cantidad: ${item.quantity}</p>
+                    <p>Cantidad: <span class="quantity">${item.quantity}</span></p>
                     <p>
                         <button class="remove-btn">-</button>
                         <button class="add-btn">+</button>
@@ -56,24 +67,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const removeButton = li.querySelector('.remove-btn');
 
             addButton.addEventListener('click', function() {
-                if (getNumberOfDistinctProducts() < 1) {
-                    const newQuantity = item.quantity + 1 || 1; // Ensure quantity is at least 1
-                    cartItems[key].quantity = newQuantity; // Update quantity in cartItems
-                    updateTotal(); // Update total price
-                    li.querySelector('p:nth-child(4)').innerText = `Cantidad: ${newQuantity}`; // Update quantity in DOM
-                } else {
-                    alert('El máximo de productos permitidos en el carrito es 1');
-                }
+                const newQuantity = item.quantity + 1;
+                cartItems[key].quantity = newQuantity; // Update quantity in cartItems
+                updateTotal(); // Update total price
+                li.querySelector('.quantity').innerText = `${newQuantity}`; // Update quantity in DOM
             });
 
             removeButton.addEventListener('click', function() {
-                const newQuantity = item.quantity - 1 || 0; // Ensure quantity is at least 0
+                const newQuantity = item.quantity - 1;
                 if (newQuantity === 0) {
                     delete cartItems[key]; // Remove item if quantity is zero
                     li.remove(); // Remove the list item from the DOM
                 } else {
                     cartItems[key].quantity = newQuantity; // Update quantity in cartItems
-                    li.querySelector('p:nth-child(4)').innerText = `Cantidad: ${newQuantity}`; // Update quantity in DOM
+                    li.querySelector('.quantity').innerText = `${newQuantity}`; // Update quantity in DOM
                 }
                 updateTotal(); // Update total price
             });
@@ -85,12 +92,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create a div for the total price
     const totalDiv = document.createElement('div');
     totalDiv.classList.add('total-price');
-    totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)}`;
+    if (total > 700) {
+        totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)} - Envío Gratis`;
+    } else {
+        totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)}`;
+    }
 
     // Insert the total price div after the product items
     cartListElement.appendChild(totalDiv);
 });
-
 
 
 
@@ -118,4 +128,3 @@ function redirectToPage() {
     }, 10000); // 5000 milliseconds = 5 seconds
 }
 
-localStorage.clear();
