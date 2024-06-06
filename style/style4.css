@@ -717,7 +717,7 @@ th {
 .grid-item-tshirt {
   text-align: center;
   padding: 20px;
-
+  overflow: hidden;
 }
 
 .envio-texto{
