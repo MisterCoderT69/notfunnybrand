@@ -336,7 +336,7 @@ span {
     overflow: hidden; /* Hide the overflow text */
     animation: scroll4 30s linear infinite; /* Change the animation speed and timing as needed */
     font-size: 200px;
-    color: rgba(0, 0, 0, 0.666);
+    color: rgba(255, 255, 255, 0.666);
     font-family: "Zen Tokyo Zoo", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -351,7 +351,7 @@ span {
     overflow: hidden; /* Hide the overflow text */
     animation: scroll3 30s linear infinite; /* Change the animation speed and timing as needed */
     font-size: 300px;
-    color: rgba(0, 0, 0, 0.666);
+    color: rgba(255, 255, 255, 0.666);
     font-family: "Bungee Hairline", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -366,7 +366,7 @@ span {
     overflow: hidden; /* Hide the overflow text */
     animation: scroll4 30s linear infinite; /* Change the animation speed and timing as needed */
     font-size: 200px;
-    color: rgba(0, 0, 0, 0.666);
+    color: rgba(255, 255, 255, 0.666);
     font-family: "Zen Tokyo Zoo", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -750,10 +750,10 @@ img {
 }
 
 .grid-item-tshirt:nth-child(1) {
-  background-color: rgba(255, 255, 255, 0.317);
+  background-color: rgba(255, 255, 255, 0);
 }
 .grid-item-tshirt:nth-child(2) {
-  background-color: rgba(255, 255, 255, 0.511);
+  background-color: rgba(255, 255, 255, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
