@@ -20,24 +20,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Function to update total price
-    function updateTotal() {
-        total = 0;
-        for (const key in cartItems) {
-            if (cartItems.hasOwnProperty(key)) {
-                const item = cartItems[key];
-                total += parseFloat(item.price.replace(/[^\d.]/g, '')) * item.quantity;
-            }
+// Function to update total price
+function updateTotal() {
+    let total = 0;
+    const threshold = 700;
+    for (const key in cartItems) {
+        if (cartItems.hasOwnProperty(key)) {
+            const item = cartItems[key];
+            total += parseFloat(item.price.replace(/[^\d.]/g, '')) * item.quantity;
         }
-
-        if (total > 700) {
-            totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)} - Envío Gratis`;
-        } else {
-            totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)}`;
-        }
-
-        localStorage.setItem('cart', JSON.stringify(Object.values(cartItems)));
     }
+
+    if (total >= threshold) {
+        totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)} - Envío Gratis`;
+    } else {
+        const amountNeeded = threshold - total;
+        totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)} - Te faltan $${amountNeeded.toFixed(2)} para tener envío gratis`;
+    }
+
+    localStorage.setItem('cart', JSON.stringify(Object.values(cartItems)));
+}
 
     // Function to get the number of distinct products in the cart
     function getNumberOfDistinctProducts() {
@@ -89,17 +91,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Create a div for the total price
-    const totalDiv = document.createElement('div');
-    totalDiv.classList.add('total-price');
-    if (total > 700) {
-        totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)} - Envío Gratis`;
-    } else {
-        totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)}`;
-    }
+// Create a div for the total price
+const totalDiv = document.createElement('div');
+totalDiv.classList.add('total-price');
 
-    // Insert the total price div after the product items
-    cartListElement.appendChild(totalDiv);
+if (total >= 700) {
+    totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)} - Envío Gratis`;
+} else {
+    const amountNeeded = 700 - total;
+    totalDiv.innerHTML = `Precio Total: $${total.toFixed(2)} - Te faltan $${amountNeeded.toFixed(2)} para tener envío gratis`;
+}
+
+// Insert the total price div after the product items
+cartListElement.appendChild(totalDiv);
+
 });
 
 
