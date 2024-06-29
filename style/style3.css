@@ -12,8 +12,8 @@ body {
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
-    background: url('../images/pnmeguin.gif') no-repeat center center fixed; /* Replace with the path to your GIF */
-    background-size: cover; /* This will make the background cover the whole area */
+    background: url('../images/seized_xd2.jpg') no-repeat center center fixed; /* Replace with the path to your GIF */
+    background-size: 80%; /* Adjust this value to reduce the size of your image */
   }
 
     /* Remove underline from links */
