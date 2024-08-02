@@ -35,58 +35,70 @@
 
 
 
-  <div class="grid-container-tshirt" style="background: url('../images/monkeyweed.webp') no-repeat center center fixed; /* Replace with the path to your GIF */
-    background-size: cover;">
+  <div class="grid-container-tshirt">
     <div class="grid-item-tshirt">
-        <img id="tshirt-image" src="../images/porritos-gorra-removebg-preview.png" alt="">
+        <img id="tshirt-image" src="../images/ife-tshirt.png" alt="">
     </div>
     <div class="grid-item-tshirt second-item">
         <div class="product">
-            <h3>GORRA PORRITO</h3>
-            <p id="price">$ 299 MXN</p>
+            <h3>I FUCK E-GIRLS TSHIRT</h3>
+            <p id="price">$ 690 MXN</p>
             
           </div>
           <select id="options" name="options">
-            <option value="XL">UNITALLA</option>
+            <option value="XL">XL</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="CH">CH</option>
           </select>
           <select id="options_blank" name="options_blank">
-            <option value="OXFORD">OXFORD</option>
+            <option value="PREMIUM">PREMIUM</option>
+            <option value="BASIC">BASIC</option>
         </select>
         <button id="addToCartBtn">Agregar al carrito</button>
         <div class="guia-tallas">
             <p class="guia-tallas-texto" >&rarr;GUIA DE TALLAS&larr;</p>
             <table class="guia-tallas-table">
                 <tr>
-                    <th>Descripción</th>
-                    <th>Detalles</th>
+                    <th>PREMIUM</th>
+                    <th>Medidas ancho x largo</th>
                 </tr>
                 <tr>
-                    <td>Tela</td>
-                    <td>Oxford Fresca y ligera</td>
+                    <td>CH</td>
+                    <td>45x71</td>
                 </tr>
                 <tr>
-                    <td>Corte</td>
-                    <td>Bajo</td>
+                    <td>M</td>
+                    <td>50x73</td>
                 </tr>
                 <tr>
-                    <td>Frente</td>
-                    <td>Suave</td>
+                    <td>G</td>
+                    <td>55x76</td>
                 </tr>
                 <tr>
-                    <td>Número de paneles</td>
-                    <td>6</td>
+                    <td>XG</td>
+                    <td>60x78</td>
+                </tr>
+
+                <tr>
+                    <th>BASIC</th>
+                    <th>Medidas ancho x largo</th>
                 </tr>
                 <tr>
-                    <td>Composición</td>
-                    <td>100% algodón cepillado</td>
+                    <td>CH</td>
+                    <td>46x71</td>
                 </tr>
                 <tr>
-                    <td>Visera</td>
-                    <td>Curva preformada y al tono</td>
+                    <td>M</td>
+                    <td>51x74</td>
                 </tr>
                 <tr>
-                    <td>Broche</td>
-                    <td>Hebilla metálica</td>
+                    <td>G</td>
+                    <td>56x76</td>
+                </tr>
+                <tr>
+                    <td>XG</td>
+                    <td>61x79</td>
                 </tr>
             </table>
         </div>
@@ -114,17 +126,17 @@ const priceElement = document.getElementById('price');
 
     optionsBlank.addEventListener('change', function() {
         if (this.value === 'BASIC') {
-            priceElement.textContent = '$ 540 MXN';
+            priceElement.textContent = '$ 399 MXN';
             optionCH.disabled = false;
         } else if (this.value === 'PREMIUM') {
-            priceElement.textContent = '$ 740 MXN';
+            priceElement.textContent = '$ 690 MXN';
             optionCH.disabled = true;
             if (optionsSize.value === 'CH') {
                 optionsSize.value = ''; // Reset the selected value
                 alert('No hay talla CH disponible para PREMIUM');
             }
         } else {
-            priceElement.textContent = '$ 740 MXN';
+            priceElement.textContent = '$ 690 MXN';
             optionCH.disabled = false;
         }
     });
@@ -150,29 +162,6 @@ const priceElement = document.getElementById('price');
         }
     });
 
-
-            // Array de URLs de las imágenes que deseas mostrar
-            const images = [
-
-            
-            "../images/porritos-lado-removebg-preview.png", 
-            "../images/porritoss_frente-removebg-preview.png", 
-            "../images/porritos_atras-removebg-preview.png"
-
-
-        ];
-
-        let currentIndex = 0; // Índice de la imagen actual
-
-        // Función para cambiar la imagen
-        function changeImage() {
-            const imgElement = document.getElementById("tshirt-image");
-            currentIndex = (currentIndex + 1) % images.length; // Incrementa el índice y reinicia si es necesario
-            imgElement.src = images[currentIndex]; // Cambia la fuente de la imagen
-        }
-
-        // Cambia la imagen cada 5 segundos (5000 milisegundos)
-        setInterval(changeImage, 2000);
 
 
 </script>
