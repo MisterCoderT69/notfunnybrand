@@ -5,7 +5,6 @@
     font-style: normal; /* Define font style (optional) */
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -60,14 +59,14 @@ body, html {
     display: block;
     margin-top: 1rem;
     font-size: 1.2rem;
-    color: #fce96b;
+    color: #1cc024;
 }
 
 .button {
     margin-top: 2rem;
     padding: 10px 30px;
-    border: 2px solid #f5e864;
-    color: #f5e864;
+    border: 2px solid #1faf3f;
+    color: #0ca432;
     background: transparent;
     text-transform: uppercase;
     font-size: 1rem;
@@ -77,7 +76,7 @@ body, html {
 }
 
 .button:hover {
-    background: #f5e864;
+    background: #28c42b;
     color: #000;
 }
 
@@ -86,7 +85,7 @@ body, html {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    color: #f5e864;
+    color: #018305;
     font-size: 1rem;
     animation: bounce 2s infinite;
 }
@@ -107,3 +106,23 @@ body, html {
     color: #f5e864;
     font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+    .section {
+        height: 70vh;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content span {
+        font-size: 1rem;
+    }
+
+    .button {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
