@@ -32,7 +32,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: black;
-  animation: fadeOverlay 3s ease-in-out 1s forwards;
+  animation: fadeOverlay 1s ease-in-out 1s forwards;
 }
 
 @keyframes fadeOverlay {
@@ -56,7 +56,7 @@ h1 {
 
 .additional-content {
   opacity: 0;
-  animation: fadeInText 2s ease-in-out 1s forwards;
+  animation: fadeInText 0.5s ease-in-out 1s forwards;
 }
 
 @keyframes fadeInText {
@@ -78,46 +78,7 @@ h1 {
 .button:hover { color: #555; }
 .button:active { color: #888; }
 
-.sections-container {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-}
 
-.section {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 0px;
-  position: relative;
-}
-
-.section-left {
-  background: url('../images/animation.gif') no-repeat center center;
-  background-size: contain;
-}
-
-.section-right {
-  background: url('../images/notfunnyanimation.gif') no-repeat center center;
-  background-size: contain;
-}
-
-.section-2 {
-  height: 900px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background: url('../images/killyourself.gif') no-repeat center center;
-  background-size: contain;
-}
-
-.section-2 h2 { font-size: 3rem; }
-.section-2 p { font-size: 1.5rem; }
 
 .footer {
   background-color: black;
@@ -172,29 +133,6 @@ h1 {
   
   h1 {
       font-size: 3rem;
-  }
-  
-  .sections-container {
-      flex-direction: column;
-      height: auto;
-  }
-  
-  .section {
-      height: 70vh;
-      background-size: cover;
-  }
-
-  .section-2 h2 { 
-    font-size: 1rem; 
-    margin-bottom: -250px;
-  }
-  .section-2{
-    height: 300px;
-  }
-  
-  .section-left, .section-right {
-      flex: 1;
-      min-height: 70vh;
   }
   
   .footer-content {
