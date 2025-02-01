@@ -13,7 +13,7 @@ body {
 }
 
 .section-1 {
-  height: 1100px;
+  height: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,7 +159,15 @@ h1 {
   }
 
   .section-1 {
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
     background: url('../images/tessimagemobile.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
   
   h1 {
@@ -211,7 +219,7 @@ h1 {
   }
 
   .footer-title h2 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   
   .footer-subscribe {
