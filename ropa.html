@@ -1,70 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOTFUNNYBRAND - Products</title>
-    <link rel="stylesheet" href="style/style-products.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style/style-products.css">
+  <link id="dynamic-favicon" rel="icon" type="image/gif" href="images/tab-images/ezgif-frame-001.png">
+  <title>NOTFUNNYSHIRTS</title>
+  <style>
+    /* Styles for the new GIF section */
+    .gif-section {
+      position: relative;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+    .gif-section img {
+      width: 50%;
+      display: block;
+      text-align: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .animated-text {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateX(100%) translateY(-50%);
+  white-space: nowrap;
+  font-size: 2em;
+  color: #fff;
+  font-weight: bold;
+  animation: slide 10s linear infinite;
+}
 
+@keyframes slide {
+  0% { transform: translateX(100%) translateY(-50%); }
+  100% { transform: translateX(-100%) translateY(-50%); }
+}
+
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>NOTFUNNYSHIRTS</h1>
-        
-        <div class="product">
-            <img src="images/playera-silk-buenaaaa.png" alt="Classic T-Shirt">
-            <div class="info">
-                <h2>Classic T-Shirt</h2>
-                <p>$25.00</p>
-            </div>
+  <div class="container">
+    <h1>NOTFUNNYSHIRTS</h1>
+    <div class="products-grid">
+      <div class="product">
+        <div class="img-container">
+          <!-- Default image -->
+          <img src="shirts-images/frontsr.png" alt="Classic T-Shirt" class="default-img" />
+          <!-- Hover image -->
+          <img src="shirts-images/backsr.png" alt="Classic T-Shirt Hover" class="hover-img" />
         </div>
-        
-        <div class="product">
-            <img src="images/playera-silk-buenaaaa.png" alt="Hoodie">
-            <div class="info">
-                <h2>Hoodie</h2>
-                <p>$40.00</p>
-            </div>
+        <div class="info">
+          <h2>i buy dr0g$ online</h2>
+          <p>$799.00</p>
         </div>
-        
-        <div class="product">
-            <img src="images/playera-silk-buenaaaa.png" alt="Cap">
-            <div class="info">
-                <h2>Cap</h2>
-                <p>$15.00</p>
-            </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/squirt-tshirt.png" alt="Hoodie" class="default-img" />
+          <img src="shirts-images/squirtbacktshirt.png" alt="Hoodie Hover" class="hover-img" />
         </div>
-
-        <div class="product">
-            <img src="images/playera-silk-buenaaaa.png" alt="Cap">
-            <div class="info">
-                <h2>Cap</h2>
-                <p>$15.00</p>
-            </div>
+        <div class="info">
+          <h2>SQUIRT</h2>
+          <p>$299</p>
         </div>
-
-        <div class="product">
-            <img src="images/playera-silk-buenaaaa.png" alt="Cap">
-            <div class="info">
-                <h2>Cap</h2>
-                <p>$15.00</p>
-            </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/revientanalgas69.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/squirtbacktshirt.png" alt="Cap Hover" class="hover-img" />
         </div>
-        <div class="product">
-            <img src="images/playera-silk-buenaaaa.png" alt="Cap">
-            <div class="info">
-                <h2>Cap</h2>
-                <p>$15.00</p>
-            </div>
+        <div class="info">
+          <h2>revientanalgas69</h2>
+          <p>$299</p>
         </div>
-
-        <div class="product">
-            <img src="images/playera-silk-buenaaaa.png" alt="Cap">
-            <div class="info">
-                <h2>Cap</h2>
-                <p>$15.00</p>
-            </div>
+      </div>
+  
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/reciencircuncidado.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/backcircundiado.png" alt="Cap Hover" class="hover-img" />
         </div>
+        <div class="info">
+          <h2>RECIEN JUDIO</h2>
+          <p>$299</p>
+        </div>
+      </div>
+  
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/mamas-calientes.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/mamas-calientesback.png" alt="Cap Hover" class="hover-img" />
+        </div>
+        <div class="info">
+          <h2>YO AMO</h2>
+          <p>$299</p>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/miprimeravez.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/miprimeravezback.png" alt="Cap Hover" class="hover-img" />
+        </div>
+        <div class="info">
+          <h2>hABBo</h2>
+          <p>$299</p>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/yanovoyaloquearmas.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/loquearmas.png" alt="Cap Hover" class="hover-img" />
+        </div>
+        <div class="info">
+          <h2>yA NO MAS</h2>
+          <p>$299</p>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/notthejuice.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/loquearmas.png" alt="Cap Hover" class="hover-img" />
+        </div>
+        <div class="info">
+          <h2>NATZIJUICE</h2>
+          <p>$299</p>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/goodpeopledisobey.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/goodpeopleback.png" alt="Cap Hover" class="hover-img" />
+        </div>
+        <div class="info">
+          <h2>Good people</h2>
+          <p>$299</p>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/tailsossdhirt.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/tailsosback.png" alt="Cap Hover" class="hover-img" />
+        </div>
+        <div class="info">
+          <h2>TailsOS</h2>
+          <p>$299</p>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/2GIRLSONECUPFRONT.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/2GIRLSONECUPBACK.png" alt="Cap Hover" class="hover-img" />
+        </div>
+        <div class="info">
+          <h2>2 GIRLS 1 CUP</h2>
+          <p>$299</p>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/seatienden.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/backovulonas.png" alt="Cap Hover" class="hover-img" />
+        </div>
+        <div class="info">
+          <h2>0vul0n4s</h2>
+          <p>$299</p>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="img-container">
+          <img src="shirts-images/jesussalvatshirt.png" alt="Cap" class="default-img" />
+          <img src="shirts-images/jesussalvaback.png" alt="Cap Hover" class="hover-img" />
+        </div>
+        <div class="info">
+          <h2>Jesus salva</h2>
+          <p>$299</p>
+        </div>
+      </div>
+      <!-- Add more product cards as needed -->
     </div>
+    
+    <!-- New GIF section with animated text -->
+    <div class="gif-section">
+      <img src="shirts/cooking.gif" alt="Cocinando Playera">
+      <div class="animated-text">
+        cocinando playeras por favor sea paciente
+      </div>
+    </div>
+    
+  </div>
+  <script src="script/script-tab.js"></script>
 </body>
 </html>
