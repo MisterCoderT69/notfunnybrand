@@ -69,22 +69,45 @@ document.addEventListener("DOMContentLoaded", function () {
             cartItemsContainer.appendChild(itemDiv);
         });
 
-        // Display total price
+        // Calculate shipping
+        const shippingCost = totalPrice >= 1200 ? 0 : 120; // Free shipping for orders > 1200 pesos
+        const finalTotal = totalPrice + shippingCost;
+
+        // Display total price and shipping
         const totalDiv = document.createElement("div");
         totalDiv.classList.add("total-price");
 
         const totalText = document.createElement("p");
-        totalText.textContent = `Total: $${totalPrice.toFixed(2)}`;
+        totalText.textContent = `Total (Productos): $${totalPrice.toFixed(2)}`;
+
+        const shippingText = document.createElement("p");
+        const remainingForFreeShipping = 1200 - totalPrice;
+        
+        // Add hover effect to show the amount needed for free shipping
+        if (shippingCost === 0) {
+            shippingText.textContent = "Envío : Gratis!";
+            shippingText.classList.add("free-shipping");
+        } else {
+            shippingText.textContent = `Envío: $${shippingCost.toFixed(2)}`;
+            shippingText.classList.add("shipping-cost");
+            // Tooltip message when hovering over the shipping cost
+            shippingText.setAttribute("title", `¡Añade $${remainingForFreeShipping.toFixed(2)} en productos para tener envío gratis!`);
+        }
+
+        const finalCostText = document.createElement("p");
+        finalCostText.textContent = `Total Final: $${finalTotal.toFixed(2)}`;
 
         // Create "Buy Now" button
         const buyNowButton = document.createElement("a");
         buyNowButton.href = "https://link.mercadopago.com.mx/notfunnybrand";
-        buyNowButton.textContent = "Buy Now";
+        buyNowButton.textContent = "Comprar Ahora";
         buyNowButton.target = "_blank"; // Open in new tab
         buyNowButton.classList.add("buy-now-btn"); // Add class for styling
 
-        // Append total price and button
+        // Append total price, shipping, final cost, and button
         totalDiv.appendChild(totalText);
+        totalDiv.appendChild(shippingText);
+        totalDiv.appendChild(finalCostText);
         totalDiv.appendChild(buyNowButton);
 
         cartItemsContainer.appendChild(totalDiv);

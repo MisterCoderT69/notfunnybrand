@@ -1000,3 +1000,71 @@ li img {
   
   }
 }
+
+
+/* Style for the total price and shipping information */
+.total-price p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.free-shipping {
+  color: green;
+  font-weight: bold;
+  animation: freeShippingAnimation 2s ease-in-out;
+}
+
+.shipping-cost {
+  color: #fbca1f; /* Default color for regular shipping cost */
+}
+
+@keyframes freeShippingAnimation {
+  0% {
+      color: green;
+      transform: scale(1);
+  }
+  50% {
+      color: limegreen;
+      transform: scale(1.2);
+  }
+  100% {
+      color: green;
+      transform: scale(1);
+  }
+}
+
+.shipping-cost {
+  color: #f44336; /* Red for shipping cost */
+  cursor: pointer;
+}
+
+.shipping-cost:hover {
+  color: #d32f2f; /* Darker red when hovered */
+}
+
+.free-shipping {
+  color: #4caf50; /* Green for free shipping */
+  font-weight: bold;
+}
+
+.free-shipping:hover {
+  color: #388e3c; /* Darker green when hovered */
+}
+
+.shipping-cost[title] {
+  position: relative;
+  cursor: pointer;
+}
+
+.shipping-cost[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: -25px;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+}
