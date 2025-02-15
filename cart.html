@@ -28,18 +28,8 @@
 
   </style>
 
-
-      <div class="cart-icon">
-        <a href="cart.html">
-          <img id="cart-image" src="images/bolsa-de-papel.png" alt="Carrito de compras">
-          <div id="cart-count" class="cart-count">👀</div>
-        </a>
-    </div>
-
-
-    <a href="index.html" style="color: inherit; text-decoration: none;"><h1>NOTFUNNYSHIRTS</h1></a>
-    
-
+    <a href="ropa.html" style="color: inherit; text-decoration: none;"><h1>NOTFUNNYSHIRTS</h1></a>
+  
     <div class="grid-container-tshirt2">
 
         <div id="cart-items" class="grid-item-tshirt-2">
@@ -83,7 +73,7 @@
 
                 <input type="hidden" name="localStorageData" id="localStorageData">
                                                         
-                <input type="submit" value="PAGAR Y ENVIAR INFORMACIÓN">
+                <input type="submit" value="ENVIAR INFORMACIÓN">
           </form>
               <!-- Disclaimer -->
             <div style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
@@ -94,40 +84,8 @@
 
 
   
-<script src="script/script.js"></script>
-<script src="script/script2.js"></script>
+<script src="script/get-cart.js"></script>
 <script>
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const guiaTallasDiv = document.querySelector('.guia-tallas');
-    const guiaTallasTable = document.querySelector('.guia-tallas-table');
-
-    guiaTallasDiv.addEventListener('click', () => {
-        if (guiaTallasTable.style.display === 'none') {
-            guiaTallasTable.style.display = 'table';
-        } else {
-            guiaTallasTable.style.display = 'none';
-        }
-    });
-});
-
-
-  const cartData = JSON.parse(localStorage.getItem('cart'));
-
-  document.getElementById('localStorageData').value = JSON.stringify(cartData);
-
-  document.getElementById('myForm').submit();
-
-    // Add an event listener for the form submission
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-    // Clear the local storage
-    localStorage.clear();
-    
-    // Clear the value of the hidden input field
-    document.getElementById('localStorageData').value = '';
-  });
 
 
 

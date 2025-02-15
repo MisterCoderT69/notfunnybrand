@@ -646,29 +646,6 @@ select {
   background-color: #fbca1f;
 }
 
-button {
-  background: #fbca1f;
-  font-family: inherit;
-  padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
-}
-
-button:active {
-  transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em;
-}
-
 
 .guia-tallas{
   margin-right:2px;
@@ -902,27 +879,24 @@ input[readonly] {
 
 }
 
+.grid-item-tshirt-2 {
+  margin-top: 100px;
 
+}
 
 /*----------TEMPLATE------------*/
 
-.grid-item-tshirt-2{
-  margin-top: 20px;
-}
-
-
-
 .cart {
   margin: 20px;
-  background-color: #fff; /* White background similar to iOS */
+  background-color: #fff;
   border-radius: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow similar to iOS */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
 .cart h2 {
   margin-bottom: 10px;
-  color: #333; /* Dark text color similar to iOS */
+  color: #333;
 }
 
 ul {
@@ -933,29 +907,96 @@ ul {
 li {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #ddd;
-  flex-direction: row-reverse; /* Reverse the order of flex items */
   font-family: "Silkscreen", sans-serif;
   font-weight: 400;
   font-style: normal;
+  flex-direction: row-reverse; /* Images stay on the right */
+  position: relative;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 li img {
-  width: 80px; /* Adjusted image size for a more compact look */
-  height: 80px; /* Maintain aspect ratio */
-  margin-left: 20px; /* Move image to the right side */
-  background-color: #ddd; /* Light gray background for images */
+  width: 80px;
+  height: 80px;
+  margin-left: 20px;
+  background-color: #ddd;
   border-radius: 10px;
-  object-fit: cover; /* Ensure images fill the space without stretching */
+  object-fit: cover;
 }
 
 .product-info {
   flex: 1;
+  min-width: 150px; /* Ensures it doesn't shrink too much */
 }
 
-.total-price{
-  border-top: 2px solid black;
-  font-size: 20px;
+.product-info p {
+  margin: 5px 0;
 }
 
+.remove-btn {
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.3em 0.8em;
+  font-weight: 900;
+  font-size: 14px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+
+.buy-now-btn {
+  display: block;
+  text-align: center;
+  background: #28a745; /* Green color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buy-now-btn:hover {
+  background: #218838; /* Darker green on hover */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  li {
+    flex-direction: column; /* Stack elements on smaller screens */
+    align-items: flex-start;
+    padding-bottom: 20px; /* Extra space for button */
+  }
+
+  li img {
+    width: 100%; /* Make images full-width */
+    max-width: 150px; /* But not too big */
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .remove-btn {
+    position: static; /* Remove absolute positioning */
+    margin-top: 10px;
+    align-self: flex-end; /* Keep it to the right */
+  }
+
+  .grid-item-tshirt-2 {
+    margin-top: -30px;
+  
+  }
+}
