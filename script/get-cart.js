@@ -123,3 +123,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial display
     displayCart();
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const localStorageInput = document.getElementById("localStorageData");
+
+    form.addEventListener("submit", function () {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        localStorageInput.value = JSON.stringify(cart); // Store cart data as JSON in the hidden input
+    });
+});
