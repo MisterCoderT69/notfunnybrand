@@ -9,34 +9,34 @@
 
 </head>
 <body>
-    <!-- First Section with Full Background -->
-    <section class="section-1">
-        <div class="content">
-            <h1>NOTFUNNYBRAND</h1>
-            <div class="additional-content">
-                <a href="ropa.html"><button class="button">NOTFUNNYSHIRTS</button></a>
-                
-            </div>
+
+
+        <div class="slider-container">
+          <button class="arrow arrow-left" onclick="moveSlide(-1)">&#9665;</button>
+          <div class="slider">
+              <section class="section section-1">
+                  <div class="content">
+                      <h1>NOTFUNNYBRAND</h1>
+                      <a href="ropa.html"><button class="button">NOTFUNNYSHIRTS</button></a>
+                  </div>
+              </section>
+
+              <section class="section section-2">
+                  <div class="content">
+                      <h2>NOTFUNNYCAPPPP</h2>
+                      <a href="ropa.html"><button class="button">PROXIMAMENTE</button></a>
+                  </div>
+              </section>
+
+              <section class="section section-3">
+                  <div class="content">
+                      <h1 style="color: rgb(255, 0, 200);">NOTFUNNYTHINGS</h1>
+                      <a href="things.html"><button style="color: rgb(255, 0, 0);" class="button">NOTFUNNYTHINGS</button></a>
+                  </div>
+              </section>
+          </div>
+          <button class="arrow arrow-right" onclick="moveSlide(1)">&#9655;</button>
         </div>
-    </section>
-
-    <!-- Second Section with Full Background -->
-    <section class="section-2">
-      <div class="content">
-          <h2>NOTFUNNYCAP</h2>
-         <a href="ropa.html"><button class="button">PROXIMAMENTE</button></a> 
-      </div>
-    </section>
-
-    <!-- Third Section with Full Background -->
-    <section class="section-3">
-        <div class="content">
-          <h2>NOTFUNNYTHINGS</h2>
-          <a href="things.html"><button class="button">PROXIMAMENTE</button></a> 
-        </div>
-    </section>
-
-
 
 
     <footer class="footer">
@@ -65,4 +65,23 @@
 
 </body>
 <script src="script/script-tab.js"></script>
+
+<script>
+  let currentIndex = 0;
+  const totalSlides = document.querySelectorAll('.section').length;
+  const slider = document.querySelector('.slider');
+
+  function moveSlide(direction) {
+      currentIndex += direction;
+
+      if (currentIndex < 0) {
+          currentIndex = totalSlides - 1;
+      } else if (currentIndex >= totalSlides) {
+          currentIndex = 0;
+      }
+
+      slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
+  }
+</script>
+
 </html>
