@@ -294,11 +294,10 @@ h1 {
 .arrow-left { left: 10px; }
 .arrow-right { right: 10px; }
 
-
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .slider {
-      width: 300vw; /* Ensure it stays full-width */
+      width: 310vw; /* Ensure it stays full-width */
   }
 
   .section {
