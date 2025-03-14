@@ -192,7 +192,7 @@ h1 {
 }
   
   h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
   }
   
   .footer-content {
@@ -301,7 +301,7 @@ h1 {
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .slider {
-      width: 310vw; /* Ensure it stays full-width */
+      width: 305vw; /* Ensure it stays full-width */
   }
 
   .section {
@@ -310,7 +310,7 @@ h1 {
   }
 
   h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
   }
 
   .arrow {
