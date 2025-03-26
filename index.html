@@ -74,11 +74,11 @@
       
       
 
-      <a title="Web Analytics" href="https://clicky.com/101480613"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" /></a>
+      <a title="Web Analytics" href="https://clicky.com/101480613"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
       <script async src="//static.getclicky.com/101480613.js"></script>
       <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101480613ns.gif" /></p></noscript>
 </body>
-      <script src="script/script-tab.js"></script>
+<script src="script/script-tab.js"></script>
 <script>
   let currentIndex = 0;
   const totalSlides = document.querySelectorAll('.section').length;
@@ -95,6 +95,13 @@
 
       slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
   }
+
+
+  setInterval(() => {
+    document.getElementById("dynamic-favicon").href = `${frames[index]}?t=${new Date().getTime()}`;
+    index = (index + 1) % frames.length;
+}, 200);
+
 </script>
 
 </html>
