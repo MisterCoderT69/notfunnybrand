@@ -14,7 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOTFUNNYBRAND</title>
     <link rel="stylesheet" href="style/style-index.css">
-    <link id="dynamic-favicon" rel="icon" type="image/gif" href="images/tab-images/ezgif-frame-001.png">
+    <link id="dynamic-favicon" rel="icon" type="image/png" href="images/tab-images/ezgif-frame-001.png">
+
 </head>
 
 <body>
@@ -78,6 +79,7 @@
       <script async src="//static.getclicky.com/101480613.js"></script>
       <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101480613ns.gif" /></p></noscript>
 </body>
+
 <script src="script/script-tab.js"></script>
 <script>
   let currentIndex = 0;
@@ -95,12 +97,6 @@
 
       slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
   }
-
-
-  setInterval(() => {
-    document.getElementById("dynamic-favicon").href = `${frames[index]}?t=${new Date().getTime()}`;
-    index = (index + 1) % frames.length;
-}, 200);
 
 </script>
 
