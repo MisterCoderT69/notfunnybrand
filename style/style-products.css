@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+.countdown {
+  font-size: 12px;
+  color: red;
+  text-align: center;
+  margin-top: 8px;
+}
+
+
  /* Global and reset styles */
     *, *::before, *::after {
         box-sizing: border-box;
@@ -117,3 +125,4 @@
           font-size: 1rem;
         }
       }
+
