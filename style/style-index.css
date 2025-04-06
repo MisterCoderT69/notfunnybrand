@@ -146,9 +146,22 @@ h1 {
   margin-top: 2rem;
 }
 
-.footer-links { flex: 1; font-size: 0.9rem; }
-.footer-links a { color: white; text-decoration: none; }
-.footer-links span { color: white; }
+.footer-links {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  display: block; /* Ensures links appear in different rows */
+  margin-bottom: 5px; /* Adds spacing between links */
+}
+
+.footer-links span {
+  color: white;
+}
+
 .footer-subscribe { flex: 1; text-align: right; }
 .footer-subscribe form { display: inline-block; }
 .footer-subscribe label { font-size: 1rem; }
@@ -345,3 +358,5 @@ h1 {
       margin-top: 1rem;
   }
 }
+
+
